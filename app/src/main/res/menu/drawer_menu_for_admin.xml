@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Sales Person">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Sales">
+
+                <item
+                    android:id="@+id/sales_person_id"
+                    android:icon="@drawable/ic_employee"
+                    android:title="Sales Person">
+
+                </item>
+
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Routes"
+        >
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Routes">
+
+                <item
+                    android:id="@+id/routes_id"
+                    android:icon="@drawable/ic_manager"
+                    android:title="Routes">
+
+                </item>
+
+
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Shop Keepers">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Shop">
+
+                <item
+                    android:id="@+id/shop_keepers_id"
+                    android:icon="@drawable/ic_visitor"
+                    android:title="Shop Keepers">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Add Shop">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Add Shop">
+                <item
+                    android:id="@+id/add_shops_on_routes_id"
+                    android:icon="@drawable/ic_history"
+                    android:title="Add Shops On Routes">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Assign Work">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Assign Sales Work">
+
+                <item
+                    android:id="@+id/assign_sales_work_id"
+                    android:icon="@drawable/ic_exit_door_symbol"
+                    android:title="Assign Sales Work">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Sign Out">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Sign Out">
+
+                <item
+                    android:id="@+id/sign_out_id"
+                    android:icon="@drawable/ic_exit_door_symbol"
+                    android:title="Sign Out">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

@@ -1,0 +1,222 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3b73dee3244a3a7d59a5b5a50af99d4a/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/616beb62b09127c825cda8f74154c0da/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6c181c4e9a12e477bd0d58c11c465dea/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e34673e7a967634895ca60f8c460fa98/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7170fb095e2fb15098a2a166b4e92ecd/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/325a17bf3cab7f56e26de3174ef383f6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8d192087ec0cd59edd8c0ef9f784c028/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c531f620d4b9b4c67bfe2feb8c0de45a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/55ea1f41e40b17daa19f368a457b6a57/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d03cbd53756929be8d19c9b86e170725/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/77b2bd54e29bfa8639f8e3b420ca74f1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b79c19d418c9be130b90253de10833c1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/75c3e7ab13916c80d3e8dbb8ef2b42df/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6e3c20f1a72ef80d40716faf37225891/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/cdfd473108e2249b5e3fdf04adc3672a/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:3:5-51
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission. ACCESS_COARSE_LOCATION
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:7:5-82
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:7:22-79
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:8:22-76
+application
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:10:5-39:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3b73dee3244a3a7d59a5b5a50af99d4a/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3b73dee3244a3a7d59a5b5a50af99d4a/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7170fb095e2fb15098a2a166b4e92ecd/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7170fb095e2fb15098a2a166b4e92ecd/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:16:9-40
+activity#com.example.xxovek.salesman_tracker1.admin.AdminHomeActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:17:9-70
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:17:19-58
+activity#com.example.xxovek.salesman_tracker1.admin.AdminLoginActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:18:9-62
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:18:19-59
+meta-data#com.google.android.geo.API_KEY
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:20:9-22:71
+	android:value
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:22:13-68
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:21:13-58
+activity#com.example.xxovek.salesman_tracker1.MainActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:24:9-30:20
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:24:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:28:27-74
+activity#com.example.xxovek.salesman_tracker1.HomeActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:31:9-50
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:31:19-47
+activity#com.example.xxovek.salesman_tracker1.UserProfile
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:32:9-49
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:32:19-46
+activity#com.example.xxovek.salesman_tracker1.Main2Activity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:33:9-51
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:33:19-48
+activity#com.example.xxovek.salesman_tracker1.MapsActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:34:9-36:59
+	android:label
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:36:13-56
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:35:13-41
+service#com.example.xxovek.salesman_tracker1.MyService
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:38:9-46
+	android:name
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:38:18-43
+uses-sdk
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3b73dee3244a3a7d59a5b5a50af99d4a/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3b73dee3244a3a7d59a5b5a50af99d4a/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/616beb62b09127c825cda8f74154c0da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/616beb62b09127c825cda8f74154c0da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6c181c4e9a12e477bd0d58c11c465dea/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6c181c4e9a12e477bd0d58c11c465dea/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e34673e7a967634895ca60f8c460fa98/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e34673e7a967634895ca60f8c460fa98/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7170fb095e2fb15098a2a166b4e92ecd/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7170fb095e2fb15098a2a166b4e92ecd/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/325a17bf3cab7f56e26de3174ef383f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/325a17bf3cab7f56e26de3174ef383f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8d192087ec0cd59edd8c0ef9f784c028/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8d192087ec0cd59edd8c0ef9f784c028/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c531f620d4b9b4c67bfe2feb8c0de45a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c531f620d4b9b4c67bfe2feb8c0de45a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/55ea1f41e40b17daa19f368a457b6a57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/55ea1f41e40b17daa19f368a457b6a57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d03cbd53756929be8d19c9b86e170725/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d03cbd53756929be8d19c9b86e170725/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/77b2bd54e29bfa8639f8e3b420ca74f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/77b2bd54e29bfa8639f8e3b420ca74f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b79c19d418c9be130b90253de10833c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b79c19d418c9be130b90253de10833c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/75c3e7ab13916c80d3e8dbb8ef2b42df/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/75c3e7ab13916c80d3e8dbb8ef2b42df/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6e3c20f1a72ef80d40716faf37225891/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6e3c20f1a72ef80d40716faf37225891/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/cdfd473108e2249b5e3fdf04adc3672a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/cdfd473108e2249b5e3fdf04adc3672a/AndroidManifest.xml:20:5-44
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+		INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:16.0.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/94549d18432e896f8121eafd9ec5858b/AndroidManifest.xml:28:9-32
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/AndroidManifest.xml:24:13-58

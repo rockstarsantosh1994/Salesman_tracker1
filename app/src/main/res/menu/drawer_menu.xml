@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Profile">
+    <menu>
+        <group android:checkableBehavior="single"
+            android:title="Profile">
+
+            <item
+                android:id="@+id/user_profile_id"
+                android:icon="@drawable/ic_employee"
+                android:title="USER PROFILE">
+
+            </item>
+
+
+        </group>
+    </menu>
+    </item>
+
+
+    <item android:title="Admin"
+        >
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Admin">
+
+                <item
+                    android:id="@+id/admin_id"
+                    android:icon="@drawable/ic_manager"
+                    android:title="ADMIN DETAILS">
+
+                </item>
+
+
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Visit">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Visit">
+
+                <item
+                    android:id="@+id/todays_visits_id"
+                    android:icon="@drawable/ic_visitor"
+                    android:title="TODAYS VISITS">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="History">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="History">
+                <item
+                    android:id="@+id/visit_history_id"
+                    android:icon="@drawable/ic_history"
+                    android:title="VISIT HISTORY">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Sign Out">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Sign Out">
+
+                <item
+                    android:id="@+id/sign_out_id"
+                    android:icon="@drawable/ic_exit_door_symbol"
+                    android:title="SIGN OUT">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+
+</menu>
