@@ -1092,14 +1092,14 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id add_shops_on_routes_id
+id add_shop_on_routes_id
 id adjust_height
 id adjust_width
 id admin_id
 id alertTitle
 id all
 id always
-id assign_sales_work_id
+id assign_salesman_work_id
 id async
 id auto
 id baddress
@@ -1275,6 +1275,7 @@ id stop1
 id submenuarrow
 id submit_area
 id tabMode
+id tabs
 id tag_transition_group
 id terrain
 id terrain_map
@@ -1305,6 +1306,7 @@ id titleDividerNoCustom
 id title_template
 id todays_visits_id
 id toolbar
+id toolbar1
 id top
 id topPanel
 id touch_outside
@@ -1319,6 +1321,7 @@ id up
 id useLogo
 id user_profile_id
 id view_offset_helper
+id viewpager
 id visible
 id visit_history_id
 id wide
@@ -1386,6 +1389,7 @@ layout design_text_input_password_icon
 layout fragment_admin_details
 layout fragment_change_password
 layout fragment_dashboard
+layout fragment_sales_person_fragment_tab
 layout fragment_todays_visits
 layout fragment_todays_visits1
 layout fragment_user_profile

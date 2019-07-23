@@ -11,7 +11,7 @@
                 <item
                     android:id="@+id/sales_person_id"
                     android:icon="@drawable/ic_employee"
-                    android:title="Sales Person">
+                    android:title="SALES PERSON">
 
                 </item>
 
@@ -30,7 +30,7 @@
                 <item
                     android:id="@+id/routes_id"
                     android:icon="@drawable/ic_manager"
-                    android:title="Routes">
+                    android:title="ROUTES">
 
                 </item>
 
@@ -48,7 +48,7 @@
                 <item
                     android:id="@+id/shop_keepers_id"
                     android:icon="@drawable/ic_visitor"
-                    android:title="Shop Keepers">
+                    android:title="SHOP KEEPERS">
 
                 </item>
 
@@ -56,14 +56,14 @@
         </menu>
     </item>
 
-    <item android:title="Add Shop">
+    <item android:title="Add Shop on Routes">
         <menu>
             <group android:checkableBehavior="single"
                 android:title="Add Shop">
                 <item
-                    android:id="@+id/add_shops_on_routes_id"
+                    android:id="@+id/add_shop_on_routes_id"
                     android:icon="@drawable/ic_history"
-                    android:title="Add Shops On Routes">
+                    android:title="ADD SHOP ON ROUTES">
 
                 </item>
 
@@ -71,15 +71,14 @@
         </menu>
     </item>
 
-    <item android:title="Assign Work">
+    <item android:title="Assign Sales Work">
         <menu>
             <group android:checkableBehavior="single"
-                android:title="Assign Sales Work">
-
+                android:title="Add Shop">
                 <item
-                    android:id="@+id/assign_sales_work_id"
-                    android:icon="@drawable/ic_exit_door_symbol"
-                    android:title="Assign Sales Work">
+                    android:id="@+id/assign_salesman_work_id"
+                    android:icon="@drawable/ic_history"
+                    android:title="ASSIGN SALES WORK">
 
                 </item>
 
@@ -95,7 +94,7 @@
                 <item
                     android:id="@+id/sign_out_id"
                     android:icon="@drawable/ic_exit_door_symbol"
-                    android:title="Sign Out">
+                    android:title="SIGN OUT">
 
                 </item>
 

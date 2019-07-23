@@ -8,6 +8,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
@@ -78,6 +80,8 @@ public class HomeActivity extends AppCompatActivity {
         fragmentTransaction.commit();
         signout.setVisibility(View.INVISIBLE);
         getSupportActionBar().setTitle("USER PROFILE");
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -89,6 +93,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new UserProfileFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("USER PROFILE");
+                       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -99,6 +104,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new AdminDetailsFragment()).addToBackStack(null).commit();
                         //fragmentTransaction.commit();
                         getSupportActionBar().setTitle("ADMIN DETAILS");
+                       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -109,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new TodaysVisitsFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("TODAYS VISITS");
+                        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -119,6 +126,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new VisitsHistoryFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("VISITS HISTORY");
+                      //  getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
