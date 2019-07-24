@@ -37,16 +37,14 @@ public class AdminHomeActivity extends AppCompatActivity {
     FragmentTransaction fragmentTransaction;
     NavigationView navigationView;
     public static final String mypreference = "prf";
-    ActionBar bar;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
-        /*bar=getActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#004D40")));
-*/
+
         SharedPreferences prf = getApplicationContext().getSharedPreferences("Options", MODE_PRIVATE);
         String uid = prf.getString("uid", "");
         String uname = prf.getString("uname", "");
@@ -99,8 +97,6 @@ public class AdminHomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new SalesPersonFragmentTab());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("SALES PERSON");
-                        //bar=getActionBar();
-                        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#004D40")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -111,7 +107,6 @@ public class AdminHomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new RoutesFragmentTab());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("ROUTES");
-                        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#004D40")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -122,7 +117,7 @@ public class AdminHomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new ShopKeepersTab());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("SHOP KEEPERS");
-                       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -133,7 +128,7 @@ public class AdminHomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new AddShopOnRoutesTab());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("VISITS HISTORY");
-                        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);

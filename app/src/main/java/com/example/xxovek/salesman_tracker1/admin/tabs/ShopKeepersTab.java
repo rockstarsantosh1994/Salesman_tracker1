@@ -38,10 +38,10 @@ public class ShopKeepersTab extends Fragment {
         setupViewPager(viewPager);
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabs);
-        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#000000"));
+       /* tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#000000"));
         tabLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
         tabLayout.setTabTextColors(Color.parseColor("#000000"), Color.parseColor("#000000"));
-        tabLayout.setupWithViewPager(viewPager);
+        */tabLayout.setupWithViewPager(viewPager);
         return view;
     }
 

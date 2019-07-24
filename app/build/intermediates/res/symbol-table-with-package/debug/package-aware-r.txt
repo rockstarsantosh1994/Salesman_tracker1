@@ -1109,6 +1109,8 @@ id blocking
 id bottom
 id btn_adminlogin
 id btn_login
+id btn_reset
+id btn_submit
 id button77
 id buttonPanel
 id cancel_action
@@ -1152,7 +1154,9 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id et_destination
 id et_password
+id et_source
 id et_username
 id exitUntilCollapsed
 id expand_activities_button
@@ -1227,6 +1231,8 @@ id right
 id right_icon
 id right_side
 id routes_id
+id rv0
+id rv1
 id sales_person_id
 id satellite
 id satellite_map
@@ -1315,6 +1321,8 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv1
+id tv2
 id tv_forgetpassword
 id uniform
 id up
@@ -1386,10 +1394,16 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_add_route_for_shops
+layout fragment_add_routes
+layout fragment_add_sales_man
+layout fragment_add_salesman
+layout fragment_add_shopkeeper
 layout fragment_admin_details
 layout fragment_change_password
 layout fragment_dashboard
 layout fragment_sales_person_fragment_tab
+layout fragment_show_route_details
 layout fragment_todays_visits
 layout fragment_todays_visits1
 layout fragment_user_profile
@@ -1454,6 +1468,8 @@ string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string btn_reset
+string btn_submit
 string character_counter_pattern
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -1473,6 +1489,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string destination
 string drawer_close
 string drawer_open
 string dropped_pin
@@ -1487,6 +1504,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string satellite_map
 string search_menu_title
+string source
 string status_bar_notification_info_overflow
 string terrain_map
 string title_activity_maps

@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new UserProfileFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("USER PROFILE");
-                       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -99,7 +99,6 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new AdminDetailsFragment()).addToBackStack(null).commit();
                         //fragmentTransaction.commit();
                         getSupportActionBar().setTitle("ADMIN DETAILS");
-                       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -110,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new TodaysVisitsFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("TODAYS VISITS");
-                        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);
@@ -121,7 +120,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.main_container, new VisitsHistoryFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("VISITS HISTORY");
-                      //  getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
                         drawerLayout.closeDrawers();
                         item.setChecked(true);
                         signout.setVisibility(View.INVISIBLE);

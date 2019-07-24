@@ -24,29 +24,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.xxovek.salesman_tracker1.admin.AdminHomeActivity" />
-        <activity android:name="com.example.xxovek.salesman_tracker1.admin.AdminLoginActivity" />
+        <activity android:name="com.example.xxovek.salesman_tracker1.admin.activity.AdminHomeActivity" />
+        <activity android:name="com.example.xxovek.salesman_tracker1.admin.activity.AdminLoginActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBAIp_h0VNsiqjrepeY6W1o8JfP83xqLyQ" />
 
-        <activity android:name="com.example.xxovek.salesman_tracker1.MainActivity" >
+        <activity android:name="com.example.xxovek.salesman_tracker1.user.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.xxovek.salesman_tracker1.HomeActivity" />
-        <activity android:name="com.example.xxovek.salesman_tracker1.UserProfile" />
-        <activity android:name="com.example.xxovek.salesman_tracker1.Main2Activity" />
+        <activity android:name="com.example.xxovek.salesman_tracker1.user.HomeActivity" />
+        <activity android:name="com.example.xxovek.salesman_tracker1.user.UserProfile" />
+        <activity android:name="com.example.xxovek.salesman_tracker1.user.Main2Activity" />
         <activity
-            android:name="com.example.xxovek.salesman_tracker1.MapsActivity"
+            android:name="com.example.xxovek.salesman_tracker1.user.MapsActivity"
             android:label="@string/title_activity_maps" />
 
-        <service android:name="com.example.xxovek.salesman_tracker1.MyService" />
+        <service android:name="com.example.xxovek.salesman_tracker1.user.MyService" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
@@ -56,6 +57,11 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.example.xxovek.salesman_tracker1.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

@@ -83,9 +83,6 @@ public class MainActivity extends AppCompatActivity  {
         editText2 = (EditText) findViewById(R.id.et_password);
         editText2.startAnimation(animation);
 
-
-
-
     }
 
     public void goToMainActivity(){

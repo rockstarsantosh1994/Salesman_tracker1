@@ -90,24 +90,24 @@ MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transf
 		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:11:9-35
 	android:theme
 		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:16:9-40
-activity#com.example.xxovek.salesman_tracker1.admin.AdminHomeActivity
-ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:17:9-70
+activity#com.example.xxovek.salesman_tracker1.admin.activity.AdminHomeActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:17:9-79
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:17:19-58
-activity#com.example.xxovek.salesman_tracker1.admin.AdminLoginActivity
-ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:18:9-62
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:17:19-67
+activity#com.example.xxovek.salesman_tracker1.admin.activity.AdminLoginActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:18:9-71
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:18:19-59
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:18:19-68
 meta-data#com.google.android.geo.API_KEY
 ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:20:9-22:71
 	android:value
 		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:22:13-68
 	android:name
 		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:21:13-58
-activity#com.example.xxovek.salesman_tracker1.MainActivity
+activity#com.example.xxovek.salesman_tracker1.user.MainActivity
 ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:24:9-30:20
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:24:19-47
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:24:19-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
@@ -118,28 +118,28 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
 		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:28:27-74
-activity#com.example.xxovek.salesman_tracker1.HomeActivity
-ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:31:9-50
+activity#com.example.xxovek.salesman_tracker1.user.HomeActivity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:31:9-55
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:31:19-47
-activity#com.example.xxovek.salesman_tracker1.UserProfile
-ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:32:9-49
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:31:19-52
+activity#com.example.xxovek.salesman_tracker1.user.UserProfile
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:32:9-54
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:32:19-46
-activity#com.example.xxovek.salesman_tracker1.Main2Activity
-ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:33:9-51
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:32:19-51
+activity#com.example.xxovek.salesman_tracker1.user.Main2Activity
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:33:9-56
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:33:19-48
-activity#com.example.xxovek.salesman_tracker1.MapsActivity
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:33:19-53
+activity#com.example.xxovek.salesman_tracker1.user.MapsActivity
 ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:34:9-36:59
 	android:label
 		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:36:13-56
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:35:13-41
-service#com.example.xxovek.salesman_tracker1.MyService
-ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:38:9-46
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:35:13-46
+service#com.example.xxovek.salesman_tracker1.user.MyService
+ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:38:9-51
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:38:18-43
+		ADDED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml:38:18-48
 uses-sdk
 INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/AndroidManifest.xml

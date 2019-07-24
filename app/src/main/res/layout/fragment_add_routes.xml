@@ -5,10 +5,101 @@
     android:layout_height="match_parent"
     tools:context=".admin.routes.AddRoutesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/rv0"
+        android:layout_marginTop="60dp">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/rv1">
 
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="15dp"
+           android:layout_marginLeft="15dp"
+           android:text="@string/source"
+           android:textColor="@color/Black"
+           android:textSize="20sp"
+           android:id="@+id/tv1"/>
+
+       <EditText
+           android:id="@+id/et_source"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:background="@drawable/et_bg"
+           android:hint="Eg. Shivaji nagar"
+
+           android:padding="16dp"
+           android:inputType="textEmailAddress"
+           android:layout_below="@+id/tv1"
+          />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="15dp"
+           android:layout_marginLeft="15dp"
+           android:textColor="@color/Black"
+           android:text="@string/destination"
+           android:textSize="20sp"
+           android:layout_below="@+id/et_source"
+           android:id="@+id/tv2"/>
+
+       <EditText
+           android:id="@+id/et_destination"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:background="@drawable/et_bg"
+           android:hint="Eg. Kothurd"
+           android:padding="16dp"
+           android:inputType="textEmailAddress"
+           android:layout_below="@+id/tv2"
+           />
+
+          </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rv1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btn_submit"
+            android:text="@string/btn_submit"
+            android:background="@drawable/btn_bg"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+             />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btn_reset"
+            android:text="@string/btn_reset"
+            android:background="@drawable/btn_bg"
+            android:textAllCaps="false"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
 </FrameLayout>
