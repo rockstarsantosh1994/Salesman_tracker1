@@ -12,8 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toolbar;
 
-import com.example.xxovek.salesman_tracker1.AdminDetailsFragment;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.AddRouteForShopsFragment;
+import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.ShowRouteDetailsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +48,8 @@ public class AddShopOnRoutesTab extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         SalesPersonFragmentTab.ViewPagerAdapter adapter = new SalesPersonFragmentTab.ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new /*ShowRouteDetailsFragment()*/AdminDetailsFragment(), "SHOW ROUTE DETAILS");
-        adapter.addFragment(new /*AddRouteForShopsFragment()*/AdminDetailsFragment(), "ADD ROUTE");
+        adapter.addFragment(new ShowRouteDetailsFragment(), "SHOW ROUTE DETAILS");
+        adapter.addFragment(new AddRouteForShopsFragment(), "ADD ROUTE");
 
         viewPager.setAdapter(adapter);
     }

@@ -14,28 +14,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".admin.AdminHomeActivity"></activity>
-        <activity android:name=".admin.AdminLoginActivity" />
+        <activity android:name=".admin.activity.AdminHomeActivity"></activity>
+        <activity android:name=".admin.activity.AdminLoginActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBAIp_h0VNsiqjrepeY6W1o8JfP83xqLyQ" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".user.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".UserProfile" />
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".user.HomeActivity" />
+        <activity android:name=".user.UserProfile" />
+        <activity android:name=".user.Main2Activity" />
         <activity
-            android:name=".MapsActivity"
+            android:name=".user.MapsActivity"
             android:label="@string/title_activity_maps" />
 
-        <service android:name=".MyService" />
+        <service android:name=".user.MyService" />
     </application>
 
 </manifest>

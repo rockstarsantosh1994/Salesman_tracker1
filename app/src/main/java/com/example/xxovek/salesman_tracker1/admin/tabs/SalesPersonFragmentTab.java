@@ -1,8 +1,6 @@
 package com.example.xxovek.salesman_tracker1.admin.tabs;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -14,8 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toolbar;
 
-import com.example.xxovek.salesman_tracker1.AdminDetailsFragment;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.salesperson.AddSalesmanFragment;
+import com.example.xxovek.salesman_tracker1.admin.salesperson.ShowSalesmanFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +49,8 @@ public class SalesPersonFragmentTab extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new /*ShowSalesmanFragment()*/AdminDetailsFragment(), "SHOW SALESMAN");
-        adapter.addFragment(new /*AddSalesmanFragment()*/AdminDetailsFragment(), "ADD SALESMAN");
+        adapter.addFragment(new ShowSalesmanFragment(), "SHOW SALESMAN");
+        adapter.addFragment(new AddSalesmanFragment(), "ADD SALESMAN");
 
         viewPager.setAdapter(adapter);
     }
