@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.assignsalesmanwork.AssignSalesManFragment">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+
+        <LinearLayout
+            android:id="@+id/lv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/OnDate"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_contactpersonname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Assign Date"
+                android:padding="16dp" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/route"
+                android:textColor="@color/Black"/>
+
+            <Spinner
+                android:id="@+id/spin_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/Salesman"
+                android:textColor="@color/Black"/>
+
+            <Spinner
+                android:id="@+id/spin_salesman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/WaitingTime"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_waitingtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Waiting Time"
+                android:padding="16dp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lv1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btn_add"
+                android:text="@string/btn_add"
+                android:background="@drawable/btn_bg"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btn_reset"
+                android:text="@string/btn_reset"
+                android:background="@drawable/btn_bg"
+                android:textAllCaps="false"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>

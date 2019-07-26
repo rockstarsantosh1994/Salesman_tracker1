@@ -4,11 +4,216 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".admin.shopkeeper.AddShopkeeperFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
 
+
+        <LinearLayout
+            android:id="@+id/lv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contactpersonname"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_contactpersonname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Full name"
+                android:padding="16dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/PersonEmailId"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_personemailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Email address"
+                android:inputType="textEmailAddress"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/PersonMobileNumber"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_personmobilenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Permanent Mobile No."
+                android:inputType="number"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/AlternateMobileNumber"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_alternatemobilenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Alternate Mobile No."
+                android:inputType="number"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/Country"
+                android:textColor="@color/Black"/>
+
+            <Spinner
+                android:id="@+id/spin_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/State"
+                android:textColor="@color/Black"/>
+
+            <Spinner
+                android:id="@+id/spin_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/State"
+                android:textColor="@color/Black"/>
+
+            <Spinner
+                android:id="@+id/spin_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/ShopAddressZipCode"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_shopaddresszipcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Pin Code"
+                android:inputType="number"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/PermanentAddress"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/et_permanentaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Permanent Address"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4"
+                android:padding="16dp" />
+
+
+            <CheckBox
+                android:id="@+id/cb_sameaspermanetaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/SameasPermanentAddress" />
+
+
+            <EditText
+                android:id="@+id/et_resendtialaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="Residential Address"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4"
+                android:padding="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lv1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btn_add"
+                android:text="@string/btn_add"
+                android:background="@drawable/btn_bg"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btn_reset"
+                android:text="@string/btn_reset"
+                android:background="@drawable/btn_bg"
+                android:textAllCaps="false"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+    </ScrollView>
 </FrameLayout>

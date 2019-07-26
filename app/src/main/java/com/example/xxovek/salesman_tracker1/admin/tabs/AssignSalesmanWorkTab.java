@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toolbar;
 
 import com.example.xxovek.salesman_tracker1.R;
-import com.example.xxovek.salesman_tracker1.admin.assignsalesmanwork.AddSalesManFragment;
+import com.example.xxovek.salesman_tracker1.admin.assignsalesmanwork.AssignSalesManFragment;
 import com.example.xxovek.salesman_tracker1.admin.assignsalesmanwork.ShowSalesmanInfoFragment;
 
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class AssignSalesmanWorkTab extends Fragment {
     private void setupViewPager(ViewPager viewPager) {
         SalesPersonFragmentTab.ViewPagerAdapter adapter = new SalesPersonFragmentTab.ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new ShowSalesmanInfoFragment(), "SHOW SALESMAN INFO");
-        adapter.addFragment(new AddSalesManFragment(), "ADD SALESMAN");
+        adapter.addFragment(new AssignSalesManFragment(), "ADD SALESMAN");
 
         viewPager.setAdapter(adapter);
     }

@@ -5,10 +5,343 @@
     android:layout_height="match_parent"
     tools:context=".admin.salesperson.AddSalesmanFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
 
+
+            <LinearLayout
+                android:id="@+id/lv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PersonFirstName"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="First Name"
+                    android:padding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PersonLastName"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Last Name"
+                    android:padding="16dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/PersonEmailId"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_personemailid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Email address"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PersonBirthDate"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_birtdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Birthdate"
+                    android:padding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/PersonMobileNumber"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_personmobilenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Permanent Mobile No."
+                    android:inputType="number"
+                    android:padding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/AlternateMobileNumber"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_alternatemobilenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Alternate Mobile No."
+                    android:inputType="number"
+                    android:padding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/Gender"
+                    android:textColor="@color/Black"/>
+
+                <Spinner
+                    android:id="@+id/spin_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/PersonStatus"
+                    android:textColor="@color/Black"/>
+
+                <Spinner
+                    android:id="@+id/spin_personstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+
+                <CheckBox
+                    android:id="@+id/cb_bankdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/BankDetails"
+                    android:checked="false"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_personaccountnumber"
+                    android:text="@string/PersonAccountNo"
+                    android:textColor="@color/Black"
+                    android:visibility="gone"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_personaccountnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Enter Account Number"
+                    android:padding="16dp"
+                    android:inputType="number"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_bankifsc"
+                    android:text="@string/BankIFSC"
+                    android:textColor="@color/Black"
+                    android:visibility="gone"
+                    />
+
+                <EditText
+                    android:id="@+id/et_bankifsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Enter IFSC"
+                    android:padding="16dp"
+                    android:inputType="text"
+                    android:visibility="gone"
+                   />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_branch"
+                    android:text="@string/Branch"
+                    android:textColor="@color/Black"
+                    android:visibility="gone"
+                   />
+
+                <EditText
+                    android:id="@+id/et_branch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Branch Name"
+                    android:padding="16dp"
+                    android:inputType="text"
+                    android:visibility="gone"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/Country"
+                    android:textColor="@color/Black"/>
+
+                <Spinner
+                    android:id="@+id/spin_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/State"
+                    android:textColor="@color/Black"/>
+
+                <Spinner
+                    android:id="@+id/spin_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/State"
+                    android:textColor="@color/Black"/>
+
+                <Spinner
+                    android:id="@+id/spin_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/ShopAddressZipCode"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_shopaddresszipcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Zip Code"
+                    android:inputType="number"
+                    android:padding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/PermanentAddress"
+                    android:textColor="@color/Black"/>
+
+                <EditText
+                    android:id="@+id/et_permanentaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Permanent Address"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="2000"
+                    android:maxLines="4"
+                    android:padding="16dp" />
+
+
+                <CheckBox
+                    android:id="@+id/cb_sameaspermanetaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/SameasPermanentAddress" />
+
+
+                <EditText
+                    android:id="@+id/et_resendtialaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_bg"
+                    android:hint="Residential Address"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="2000"
+                    android:maxLines="4"
+                    android:padding="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lv1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:weightSum="2">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_add"
+                    android:text="@string/btn_add"
+                    android:background="@drawable/btn_bg"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_reset"
+                    android:text="@string/btn_reset"
+                    android:background="@drawable/btn_bg"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"/>
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
 </FrameLayout>

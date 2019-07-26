@@ -27,7 +27,7 @@ public class AddRoutesFragment extends Fragment {
 
     public EditText et_source,et_destination;
     public Button btn_submit,btn_reset;
-    public String ADD_ROUTE="http://track.xxovek.com/src/add_route.php";
+    public static final String ADD_ROUTE="http://track.xxovek.com/src/add_route.php";
 
     public AddRoutesFragment() {
         // Required empty public constructor
