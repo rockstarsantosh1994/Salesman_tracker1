@@ -3,6 +3,8 @@ package com.example.xxovek.salesman_tracker1.admin.addshopsonroute;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -79,12 +81,12 @@ public class AddRouteForShopsFragment extends Fragment {
                                 Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
                                 Log.d("mytag", "ADD_ROUTE_DETAILS onResponse: "+response);
 
-                               /* Fragment fragment = new ProductsAndServices();
+                                Fragment fragment = new ShowRouteDetailsFragment();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.main_container, fragment);
                                 fragmentTransaction.addToBackStack(null);
-                                fragmentTransaction.commit();*/
+                                fragmentTransaction.commit();
                             }
                         },
                         new Response.ErrorListener() {

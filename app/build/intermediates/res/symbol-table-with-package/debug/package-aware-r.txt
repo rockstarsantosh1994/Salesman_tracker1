@@ -1470,6 +1470,7 @@ string AlternateMobileNumber
 string BankDetails
 string BankIFSC
 string Branch
+string City
 string Country
 string Gender
 string OnDate

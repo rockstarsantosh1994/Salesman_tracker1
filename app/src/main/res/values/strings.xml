@@ -40,4 +40,5 @@
     <string name="PersonAccountNo">Person Account No:</string>
     <string name="BankIFSC">Bank IFSC:</string>
     <string name="Branch">Branch:</string>
+    <string name="City">City *</string>
 </resources>

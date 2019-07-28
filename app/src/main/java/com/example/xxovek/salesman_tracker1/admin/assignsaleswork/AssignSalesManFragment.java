@@ -4,6 +4,8 @@ import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -117,12 +119,12 @@ public class AssignSalesManFragment extends Fragment {
                                 Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
                                 Log.d("mytag", "ADD_SALES_WORK onResponse: "+response);
 
-                               /* Fragment fragment = new ProductsAndServices();
+                                Fragment fragment = new ShowSalesmanInfoFragment();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.main_container, fragment);
                                 fragmentTransaction.addToBackStack(null);
-                                fragmentTransaction.commit();*/
+                                fragmentTransaction.commit();
                             }
                         },
                         new Response.ErrorListener() {
