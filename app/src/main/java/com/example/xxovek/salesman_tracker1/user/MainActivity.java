@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity  {
         prf = getApplicationContext().getSharedPreferences("Options", Context.MODE_PRIVATE);
         editor = prf.edit();
 
-        if(prf.getBoolean("logged",false)){
+        /*if(prf.getBoolean("logged",false)){
             goToMainActivity();
-        }
+        }*/
 
         iv_icon=(ImageView)findViewById(R.id.iv_icon);
         animation = AnimationUtils.loadAnimation(getApplicationContext(),

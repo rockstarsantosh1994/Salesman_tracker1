@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.assignsalesmanwork.AssignSalesManFragment">
+    tools:context=".admin.assignsaleswork.AssignSalesManFragment">
 
     <RelativeLayout
         android:layout_height="match_parent"
@@ -26,12 +26,14 @@
                 android:textColor="@color/Black"/>
 
             <EditText
-                android:id="@+id/et_contactpersonname"
+                android:id="@+id/et_ondate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/et_bg"
                 android:hint="Assign Date"
-                android:padding="16dp" />
+                android:editable="false"
+                android:padding="16dp"
+                 />
 
 
 
@@ -51,7 +53,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/Salesman"
                 android:textColor="@color/Black"/>
 
@@ -59,11 +61,12 @@
                 android:id="@+id/spin_salesman"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="@string/WaitingTime"
                 android:textColor="@color/Black"/>
 
@@ -73,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/et_bg"
                 android:hint="Waiting Time"
+                android:inputType="number"
                 android:padding="16dp" />
 
 

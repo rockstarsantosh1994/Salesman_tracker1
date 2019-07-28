@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Toolbar;
 
 import com.example.xxovek.salesman_tracker1.R;
-import com.example.xxovek.salesman_tracker1.admin.assignsalesmanwork.AssignSalesManFragment;
-import com.example.xxovek.salesman_tracker1.admin.assignsalesmanwork.ShowSalesmanInfoFragment;
+import com.example.xxovek.salesman_tracker1.admin.assignsaleswork.AssignSalesManFragment;
+import com.example.xxovek.salesman_tracker1.admin.assignsaleswork.ShowSalesmanInfoFragment;
 
 import java.util.ArrayList;
 import java.util.List;

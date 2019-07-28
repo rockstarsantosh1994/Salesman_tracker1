@@ -34,6 +34,7 @@ import com.example.xxovek.salesman_tracker1.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,9 +67,9 @@ public class AdminLoginActivity extends AppCompatActivity {
         prf = getApplicationContext().getSharedPreferences("Options", Context.MODE_PRIVATE);
         editor = prf.edit();
 
-        if(prf.getBoolean("logged",false)){
+        /*if(prf.getBoolean("logged",false)){
             goToMainActivity();
-        }
+        }*/
 
         iv_icon=(ImageView)findViewById(R.id.iv_icon);
         animation = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -106,8 +107,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         String type = "login";
 
         Log.d("mytag", "loginAsAdmin: Email"+username+"\nPassword"+passsword);
-        final String email = editText1.getText().toString().trim();
-        final String password = editText2.getText().toString().trim();
+
 
 
         //Creating a string request
@@ -122,16 +122,20 @@ public class AdminLoginActivity extends AppCompatActivity {
 
                         }else{
                             try {
-                                JSONArray json_data = null;
+
+                                JSONObject json = new JSONObject(response);
+                                Log.d("mytag", "onResponse: Printing Json Data"+json);
+
+                                String msg=json.getString("true");
+                                String username=json.getString("username");
+                                String email=json.getString("email");
+                                String admin_id=json.getString("admin_id");
+
+                                Log.d("mytag", "onResponse: "+msg+"\n"+username+"\n"+email+"\n"+admin_id);
+
                                 //json_data = new JSONArray(response);
-
-                                String user_id = (String) json_data.get(0);
-                                String username = (String) json_data.get(1);
-                                String email = (String) json_data.get(2);
-                                String admin_id = (String) json_data.get(3);
-
-                                editor.putBoolean("logged", true).apply();
-                                editor.putString("user_id", user_id);
+                                editor.putBoolean("logged",true).apply();
+                                editor.putString("logged", msg).apply();
                                 editor.putString("username", username);// Storing string
                                 editor.putString("email", email);// Storing string
                                 editor.putString("admin_id", admin_id);// Storing string
