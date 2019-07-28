@@ -1096,13 +1096,13 @@ id add_shop_on_routes_id
 id adjust_height
 id adjust_width
 id admin_id
+id admin_show_recycle_id
 id alertTitle
 id all
 id always
 id assign_salesman_work_id
 id async
 id auto
-id baddress
 id barrier
 id beginning
 id blocking
@@ -1139,7 +1139,6 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
-id cwebsite
 id dark
 id decor_content_parent
 id default_activity_button
@@ -1239,7 +1238,6 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
-id phone
 id pin
 id progress_circular
 id progress_horizontal
@@ -1307,6 +1305,16 @@ id status_bar_latest_event_content
 id stop1
 id submenuarrow
 id submit_area
+id t1
+id t10
+id t2
+id t3
+id t4
+id t5
+id t6
+id t7
+id t8
+id t9
 id tabMode
 id tabs
 id tag_transition_group

@@ -14,21 +14,36 @@ import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> mData,mData1,mData2,mData3;
+    private List<String> mData1,mData2,mData3,mData4,mData5,mData6,mData7,mData8,mData9,mData10;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
-    private String mData4;
+    private String mData;
     private String flag="0";
 
     // data is passed into the constructor
-    MyRecyclerViewAdapter(Context context, List<String> data, List<String> data1, List<String> data2, List<String> data3,  String data4) {
+   /* public MyRecyclerViewAdapter(Context context, List<String> data, List<String> data1, List<String> data2, List<String> data3, String data4) {
         this.mInflater = LayoutInflater.from(context);
-        this.mData = data;
         this.mData1 = data1;
         this.mData2 = data2;
         this.mData3 = data3;
-        this.mData4 = data4;
+        this.mData = data4;
 
+
+    }*/
+
+    public MyRecyclerViewAdapter(Context context,List<String> mData1, List<String> mData2, List<String> mData3, List<String> mData4, List<String> mData5, List<String> mData6, List<String> mData7, List<String> mData8, List<String> mData9, List<String> mData10, String mdata) {
+        this.mInflater = LayoutInflater.from(context);
+        this.mData1 = mData1;
+        this.mData2 = mData2;
+        this.mData3 = mData3;
+        this.mData4 = mData4;
+        this.mData5 = mData5;
+        this.mData6 = mData6;
+        this.mData7 = mData7;
+        this.mData8 = mData8;
+        this.mData9 = mData9;
+        this.mData10 = mData10;
+        this.mData = mdata;
 
     }
 
@@ -43,18 +58,30 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String name = mData.get(position);
-        String phone = mData1.get(position);
-        String baddress = mData2.get(position);
-        String user_id = mData3.get(position);
-        flag = mData4;
+        String t1 = mData1.get(position);
+        String t2 = mData2.get(position);
+        String t3 = mData3.get(position);
+        String t4 = mData4.get(position);
+        String t5 = mData5.get(position);
+        String t6 = mData6.get(position);
+        String t7 = mData7.get(position);
+        String t8 = mData8.get(position);
+        String t9 = mData9.get(position);
+        String t10 = mData10.get(position);
+        flag = mData;
 
 
 
-        holder.myTextView.setText(name);
-        holder.myTextView1.setText(phone);
-        holder.myTextView2.setText(baddress);
-        holder.myTextView3.setText(user_id);
+        holder.myTextView1.setText(t1);
+        holder.myTextView2.setText(t2);
+        holder.myTextView3.setText(t3);
+        holder.myTextView4.setText(t4);
+        holder.myTextView5.setText(t5);
+        holder.myTextView6.setText(t6);
+        holder.myTextView7.setText(t7);
+        holder.myTextView8.setText(t8);
+        holder.myTextView9.setText(t9);
+        holder.myTextView10.setText(t10);
         if (flag.equals("0")){
             holder.mybutton.setVisibility(View.VISIBLE);
         }
@@ -62,32 +89,53 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             holder.mybutton.setVisibility(View.GONE);
             holder.myTextView3.setVisibility(View.GONE);
 
+        }else if(flag.equals("2")) {
+            holder.mybutton.setVisibility(View.GONE);
+            holder.myTextView1.setVisibility(View.GONE);
+            holder.myTextView6.setVisibility(View.GONE);
+            holder.myTextView7.setVisibility(View.GONE);
+            holder.myTextView8.setVisibility(View.GONE);
+            holder.myTextView9.setVisibility(View.GONE);
+            holder.myTextView10.setVisibility(View.GONE);
+
+        }else if(flag.equals("3")) {
+            holder.mybutton.setVisibility(View.GONE);
+            holder.myTextView1.setVisibility(View.GONE);
+            holder.myTextView7.setVisibility(View.GONE);
+            holder.myTextView8.setVisibility(View.GONE);
+            holder.myTextView9.setVisibility(View.GONE);
+            holder.myTextView10.setVisibility(View.GONE);
+
         }
-
-
 
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return mData.size();
+        return mData1.size();
     }
 
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView myTextView,myTextView1,myTextView2,myTextView3;
+        TextView myTextView1,myTextView2,myTextView3,myTextView4,myTextView5,myTextView6,myTextView7,myTextView8,myTextView9,myTextView10;
         ImageButton mybutton;
 
         ViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(R.id.name);
-            myTextView1 = itemView.findViewById(R.id.phone);
-            myTextView2 = itemView.findViewById(R.id.baddress);
-            myTextView3 = itemView.findViewById(R.id.cwebsite);
+            myTextView1 = itemView.findViewById(R.id.t1);
+            myTextView2 = itemView.findViewById(R.id.t2);
+            myTextView3 = itemView.findViewById(R.id.t3);
+            myTextView4 = itemView.findViewById(R.id.t4);
+            myTextView5 = itemView.findViewById(R.id.t5);
+            myTextView6 = itemView.findViewById(R.id.t6);
+            myTextView7 = itemView.findViewById(R.id.t7);
+            myTextView8 = itemView.findViewById(R.id.t8);
+            myTextView9 = itemView.findViewById(R.id.t9);
+            myTextView10 = itemView.findViewById(R.id.t10);
             mybutton = itemView.findViewById(R.id.imageButton);
-            myTextView.setVisibility(View.INVISIBLE);
+            myTextView1.setVisibility(View.INVISIBLE);
 
 
 
@@ -110,7 +158,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     // convenience method for getting data at click position
     String getItem(int id) {
-         return mData.get(id);
+         return mData1.get(id);
     }
 
     // allows clicks events to be caught

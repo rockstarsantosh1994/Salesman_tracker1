@@ -167,7 +167,7 @@ public class TodaysVisits1Fragment extends Fragment implements View.OnClickListe
                                 recyclerView.setLayoutManager(mLayoutManager);
 
                                 recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al3,al2,"1");
+                                adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al3,al2,al2,al2,al2,al2,al2,al2,"1");
 //                    adapter.setClickListener(this);
                                 recyclerView.setAdapter(adapter);
                                 recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -334,7 +334,7 @@ public class TodaysVisits1Fragment extends Fragment implements View.OnClickListe
                     recyclerView.setLayoutManager(mLayoutManager);
 
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
-                    adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al3,al2,"1");
+                    adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al3,al2,al2,al2,al2,al2,al2,al2,"1");
 //                    adapter.setClickListener(this);
                     recyclerView.setAdapter(adapter);
                     recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),

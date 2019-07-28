@@ -254,8 +254,6 @@ public class AddShopkeeperFragment extends Fragment {
                                 List<String> al2 = new ArrayList<String>();
                                 List<String> al3 = new ArrayList<String>();
 
-
-
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);

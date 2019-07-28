@@ -139,7 +139,7 @@ public class TodaysVisitsFragment extends Fragment implements MyRecyclerViewAdap
                                 recyclerView.setLayoutManager(mLayoutManager);
 
                                 recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al2,al3,"0");
+                                adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al2,al3,al3,al3,al3,al3,al3,al3,"0");
                                 adapter.setClickListener(TodaysVisitsFragment.this);
                                 recyclerView.setAdapter(adapter);
                                 recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),

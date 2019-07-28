@@ -181,7 +181,7 @@ public class VisitsHistoryFragment extends Fragment {
                     recyclerView.setLayoutManager(mLayoutManager);
 
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
-                    adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al2,al3,"1");
+                    adapter = new MyRecyclerViewAdapter(getContext(), al,al1,al2,al3,al3,al3,al3,al3,al3,al3,"1");
 //                    adapter.setClickListener(this);
                     recyclerView.setAdapter(adapter);
                     recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),

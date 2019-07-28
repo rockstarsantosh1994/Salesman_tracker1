@@ -24,18 +24,18 @@
             android:layout_marginBottom="10dp">
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/t1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/t2"
                 style="@style/TextAppearance.AppCompat.Headline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/name"
+                android:layout_below="@id/t1"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -44,11 +44,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/baddress"
+                android:id="@+id/t3"
                 style="@style/Widget.AppCompat.ButtonBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/phone"
+                android:layout_below="@id/t2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="40dp"
@@ -58,11 +58,83 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/cwebsite"
+                android:id="@+id/t4"
                 style="@style/Theme.AppCompat.DayNight.DarkActionBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/baddress"
+                android:layout_below="@id/t3"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t5"
+                style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t4"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t6"
+                style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t5"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t7"
+                style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t6"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t8"
+                style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t7"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t9"
+                style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t8"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t10"
+                style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t9"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textColor="@color/red"
@@ -88,4 +160,3 @@
 
 
 </RelativeLayout>
-
