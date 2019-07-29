@@ -79,7 +79,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_bg"
                     android:hint="Birthdate"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    android:editable="false"/>
 
                 <TextView
                     android:layout_width="match_parent"

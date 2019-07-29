@@ -25,6 +25,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -81,7 +82,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
                                 Log.d("mytag", "ADD_ROUTE_DETAILS onResponse: "+response);
 
-                                Fragment fragment = new ShowRouteDetailsFragment();
+                                Fragment fragment = new AddShopOnRoutesTab();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.main_container, fragment);

@@ -1,10 +1,13 @@
 package com.example.xxovek.salesman_tracker1.admin.shopkeeper;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +30,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.ShowRouteDetailsFragment;
+import com.example.xxovek.salesman_tracker1.admin.tabs.ShopKeepersTab;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,9 +47,9 @@ public class AddShopkeeperFragment extends Fragment {
 
     public EditText et_contactpersonname,et_mailid,et_mobileno,et_alternateno,et_pincode,et_permanentadd,et_residentialadd;
     public Spinner spin_country,spin_state,spin_city;
-    public CheckBox cb_sameaspermanentabove;
+    public CheckBox cb_sameasabove;
     public Button btn_add,btn_reset;
-    String st_country_id,st_state_id,st_city_id,address,st_state_name;
+    String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name;
     HashMap<Integer, String> spinnerMap3;
 
     public AddShopkeeperFragment() {
@@ -58,7 +63,11 @@ public class AddShopkeeperFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_add_shopkeeper, container, false);
 
-        //EditText.....
+        SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
+        admin_id=prf.getString("admin_id", "");
+        Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
+
+        //EditText Declaration.....
         et_contactpersonname=view.findViewById(R.id.et_contactpersonname);
         et_mailid=view.findViewById(R.id.et_personemailid);
         et_mobileno=view.findViewById(R.id.et_personmobilenumber);
@@ -66,19 +75,34 @@ public class AddShopkeeperFragment extends Fragment {
         et_pincode=view.findViewById(R.id.et_shopaddresszipcode);
         et_permanentadd=view.findViewById(R.id.et_permanentaddress);
         et_residentialadd=view.findViewById(R.id.et_resendtialaddress);
+
+        //Button Declaration....
         btn_add=view.findViewById(R.id.btn_add);
         btn_reset=view.findViewById(R.id.btn_reset);
 
-        //Spinner.....
+        //Spinner Declaration.....
         spin_country=view.findViewById(R.id.spin_country);
         spin_state=view.findViewById(R.id.spin_state);
         spin_city=view.findViewById(R.id.spin_city);
 
-        //Checkbox.....
-        cb_sameaspermanentabove=view.findViewById(R.id.cb_sameaspermanetaddress);
+        //Checkbox Declaration.....
+        cb_sameasabove=view.findViewById(R.id.cb_sameaspermanetaddress);
+
+        cb_sameasabove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Boolean checkBoxState = cb_sameasabove.isChecked();
+                if(checkBoxState.equals(true)){
+                    et_residentialadd.setText(et_permanentadd.getText().toString());
+                }
+                else{
+                    et_residentialadd.getText().clear();
+                }
+            }
+        });
 
 
-        //Getting COuntry Data in Spinner......
+        //Getting Country Data in Spinner......
         getCountrySpin();
 
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -91,8 +115,25 @@ public class AddShopkeeperFragment extends Fragment {
                 GeocodingLocation locationAddress = new GeocodingLocation();
                 locationAddress.getAddressFromLocation(address,
                         getContext(), new GeocoderHandler());
+
+
+                //function will insert data in shopKeeperRegistration.php api....
+                shopKeeperRegistration();
             }
 
+        });
+
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                et_contactpersonname.getText().clear();
+                et_mailid.getText().clear();
+                et_mobileno.getText().clear();
+                et_alternateno.getText().clear();
+                et_pincode.getText().clear();
+                et_permanentadd.getText().clear();
+                et_residentialadd.getText().clear();
+            }
         });
 
         return view;
@@ -109,10 +150,71 @@ public class AddShopkeeperFragment extends Fragment {
                 break;
             default:
                 locationAddress = null;
+            }
+            Log.d("mytag", "handleMessage: Transferring Address to latlong"+locationAddress);
         }
-        Log.d("mytag", "handleMessage: Transferring Address to latlong"+locationAddress);
     }
-}
+
+
+    public void shopKeeperRegistration(){
+        final StringRequest saveRegistration = new StringRequest(Request.Method.POST, ConfigUrls.ADD_SHOP_KEEPER_REGISTRATION,
+                new Response.Listener<String>() {
+
+
+                    @Override
+                    public void onResponse(String response) {
+
+
+                        Toast.makeText(getContext(), "ADD_SHOP_KEEPER_REGISTRATION onResponse\n\n"+response, Toast.LENGTH_SHORT).show();
+                        Log.d("mytag", "ADD_SHOP_KEEPER_REGISTRATION onResponse: "+response);
+
+                        Fragment fragment = new ShopKeepersTab();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.main_container, fragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("admin_id", admin_id);
+                params.put("contactperson", et_contactpersonname.getText().toString());
+                params.put("mobileno", et_mobileno.getText().toString());
+                params.put("mobileno1", et_alternateno.getText().toString());
+                params.put("emailid", et_mailid.getText().toString());
+                params.put("country", st_country_id);
+                params.put("state", st_state_name);
+                params.put("city", st_city_id);
+                params.put("shoppincode", et_pincode.getText().toString());
+                params.put("address1", et_permanentadd.getText().toString());
+                params.put("address2", et_residentialadd.getText().toString());
+
+                params.put("lat", String.valueOf(19.000));
+                params.put("long", String.valueOf(73.00));
+
+                Log.d("mytag", "getParams: "+et_contactpersonname.getText().toString()+"\n"+et_mobileno.getText().toString()+
+                       "\n"+et_alternateno.getText().toString()+"\n"+ et_mailid.getText().toString()+"\n"+st_country_id+
+                        "\n"+ st_state_name+"\n"+st_city_id+"\n"+ et_pincode.getText().toString()+"\n"+ et_permanentadd.getText().toString()+
+                        "\n"+et_residentialadd.getText().toString());
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue6 = Volley.newRequestQueue(getContext());
+        requestQueue6.add(saveRegistration);
+    }
+
+
+
     public void getCountrySpin(){
         StringRequest stringRequest1 = new StringRequest(Request.Method.POST, ConfigUrls.COUNTRY_URL,
                 new Response.Listener<String>() {
@@ -152,6 +254,7 @@ public class AddShopkeeperFragment extends Fragment {
 
                                     dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                                     spin_country.setAdapter(dataAdapter);
+                                    spin_country.setSelection(100);
 
                                    /* String[] spinnerArray = new String[al1.size()];
                                     spinnerMap1 = new HashMap<Integer, String>();

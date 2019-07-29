@@ -13,6 +13,7 @@ public class ConfigUrls {
     public static final String ADD_SALES_WORK=ROOT_URL+"add_sales_work";
     public static final String ADD_ROUTE_DETAILS=ROOT_URL+"addRouteDetails";
     public static final String ADD_SHOP_KEEPER_REGISTRATION=ROOT_URL+"shopKeeperRegistration";
+    public static final String ADD_SALES_REGISTRATION=ROOT_URL+"salesRegistration";
     public static final String COUNTRY_URL=ROOT_URL+"countries.php";
     public static final String STATES_URL=ROOT_URL+"states.php";
     public static final String CITY_URL=ROOT_URL+"city";
