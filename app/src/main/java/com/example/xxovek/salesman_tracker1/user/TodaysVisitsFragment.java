@@ -43,7 +43,7 @@ import java.util.Map;
 public class TodaysVisitsFragment extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
     public int i;
     public MyRecyclerViewAdapter adapter;
-    RecyclerView recyclerView;
+    public RecyclerView recyclerView;
     String n [] ;
     FragmentTransaction fragmentTransaction;
     String a="",cid="2";

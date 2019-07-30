@@ -1,12 +1,17 @@
 package com.example.xxovek.salesman_tracker1.admin.salesperson;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +25,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.AddRouteForShopsFragment;
+import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
 import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
 import org.json.JSONArray;
@@ -33,7 +41,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class ShowSalesmanFragment extends Fragment {
+public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
 
     RecyclerView recyclerView;
     public int i;
@@ -119,7 +127,7 @@ public class ShowSalesmanFragment extends Fragment {
 
                                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                                 adapter = new MyRecyclerViewAdapter(getContext(), al1,al2,al3,al4,al5,al6,al3,al2,al1,al1,"3");
-//                    adapter.setClickListener(this);
+                                adapter.setClickListener(ShowSalesmanFragment.this);
                                 recyclerView.setAdapter(adapter);
                                 recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                                         DividerItemDecoration.VERTICAL));
@@ -154,6 +162,111 @@ public class ShowSalesmanFragment extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+
+        int id=view.getId();
+        String user_id1 = adapter.getItem(position);
+        // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
+
+        switch (id){
+            case R.id.t2:Fragment fragment = new AddRouteForShopsFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Bundle data = new Bundle();//Use bundle to pass data
+                data.putString("data", user_id1);
+                fragment.setArguments(data);
+                fragmentTransaction.replace(R.id.main_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+
+            case R.id.imageButton: final String st_delid= adapter.getItem(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setIcon(android.R.drawable.ic_lock_power_off);
+                builder.setTitle("Delete");
+                builder.setMessage("Do you really want to delete?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        Toast.makeText(getContext(), "st_delid\n"+st_delid, Toast.LENGTH_SHORT).show();
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.REMOVE_DETAILS,
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        //If we are getting success from server
+                                        if(TextUtils.isEmpty(response)){
+                                            //Creating a shared preference
+                                            Toast.makeText(getContext(), "Unable to delete product data"+response.toString(), Toast.LENGTH_LONG).show();
+
+                                        }else{
+
+                                            Toast.makeText(getContext(), "Customer Deleted Successfully"+response, Toast.LENGTH_SHORT).show();
+                                            Log.d("mytag", "onResponse:REMOVE_DETAILS "+response);
+                                            Fragment fragment = new AddShopOnRoutesTab();
+                                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                            fragmentTransaction.replace(R.id.main_container, fragment);
+                                            fragmentTransaction.addToBackStack(null);
+                                            fragmentTransaction.commit();
+                                            adapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                },
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        //You can handle error here if you want
+                                    }
+                                }){
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String,String> params = new HashMap<>();
+                                //Adding parameters to request
+
+                                String tblname="SalesManMaster";
+                                String colname="salesManId";
+                                params.put("id", st_delid);
+                                params.put("tblName", tblname);
+                                params.put("colName", colname);
+//                params.put("password", password);
+
+                                Log.d("mytag", "\ngetParams: ID "+st_delid+"\ntblname "+tblname+"\ncolname "+colname);
+
+                                //returning parameter
+                                return params;
+                            }
+                        };
+
+                        //Adding the string request to the queue
+                        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+                        requestQueue.add(stringRequest);
+
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getContext(), "Delete Operation Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+
+                break;
+        }
+
+        // Intent intent = new Intent(getContext(), Clientsinfo.class);
+        // startActivity(intent);
+
+
     }
 
 

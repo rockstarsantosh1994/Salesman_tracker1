@@ -1030,6 +1030,7 @@ drawable et_bg
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_account_circle_black_24dp
+drawable ic_delete
 drawable ic_employee
 drawable ic_exit_door_symbol
 drawable ic_feedback

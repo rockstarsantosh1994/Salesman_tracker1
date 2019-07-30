@@ -17,4 +17,5 @@ public class ConfigUrls {
     public static final String COUNTRY_URL=ROOT_URL+"countries.php";
     public static final String STATES_URL=ROOT_URL+"states.php";
     public static final String CITY_URL=ROOT_URL+"city";
+    public static final String REMOVE_DETAILS =ROOT_URL+"removeDetails";
 }

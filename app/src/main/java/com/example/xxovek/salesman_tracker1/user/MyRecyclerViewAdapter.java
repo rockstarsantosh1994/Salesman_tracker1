@@ -14,11 +14,11 @@ import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> mData1,mData2,mData3,mData4,mData5,mData6,mData7,mData8,mData9,mData10;
-    private LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
-    private String mData;
-    private String flag="0";
+    public List<String> mData1,mData2,mData3,mData4,mData5,mData6,mData7,mData8,mData9,mData10;
+    public LayoutInflater mInflater;
+    public static ItemClickListener mClickListener;
+    public String mData;
+    public String flag="0";
 
     // data is passed into the constructor
    /* public MyRecyclerViewAdapter(Context context, List<String> data, List<String> data1, List<String> data2, List<String> data3, String data4) {
@@ -83,14 +83,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.myTextView9.setText(t9);
         holder.myTextView10.setText(t10);
         if (flag.equals("0")){
-            holder.mybutton.setVisibility(View.VISIBLE);
+            //holder.mybutton.setVisibility(View.VISIBLE);
         }
         else if(flag.equals("1")){
-            holder.mybutton.setVisibility(View.GONE);
-            holder.myTextView3.setVisibility(View.GONE);
+           // holder.mybutton.setVisibility(View.GONE);
+          //  holder.myTextView3.setVisibility(View.GONE);
 
         }else if(flag.equals("2")) {
-            holder.mybutton.setVisibility(View.GONE);
             holder.myTextView1.setVisibility(View.GONE);
             holder.myTextView6.setVisibility(View.GONE);
             holder.myTextView7.setVisibility(View.GONE);
@@ -99,7 +98,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             holder.myTextView10.setVisibility(View.GONE);
 
         }else if(flag.equals("3")) {
-            holder.mybutton.setVisibility(View.GONE);
+           
             holder.myTextView1.setVisibility(View.GONE);
             holder.myTextView7.setVisibility(View.GONE);
             holder.myTextView8.setVisibility(View.GONE);
@@ -117,12 +116,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
 
+
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView myTextView1,myTextView2,myTextView3,myTextView4,myTextView5,myTextView6,myTextView7,myTextView8,myTextView9,myTextView10;
-        ImageButton mybutton;
+        public TextView myTextView1,myTextView2,myTextView3,myTextView4,myTextView5,myTextView6,myTextView7,myTextView8,myTextView9,myTextView10;
+        public ImageButton mybutton;
 
-        ViewHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             myTextView1 = itemView.findViewById(R.id.t1);
             myTextView2 = itemView.findViewById(R.id.t2);
@@ -138,14 +138,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             myTextView1.setVisibility(View.INVISIBLE);
 
 
-
-
-
-
-
-            mybutton.setOnClickListener(this);
-
             itemView.setOnClickListener(this);
+            mybutton.setOnClickListener(this);
+            myTextView2.setOnClickListener(this);
+            myTextView3.setOnClickListener(this);
+            myTextView4.setOnClickListener(this);
+
         }
 
         @Override
@@ -157,12 +155,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     // convenience method for getting data at click position
-    String getItem(int id) {
+    public String getItem(int id) {
          return mData1.get(id);
     }
 
     // allows clicks events to be caught
-    void setClickListener(TodaysVisitsFragment itemClickListener) {
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

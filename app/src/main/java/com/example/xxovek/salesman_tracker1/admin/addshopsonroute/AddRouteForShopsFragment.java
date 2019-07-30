@@ -40,7 +40,7 @@ public class AddRouteForShopsFragment extends Fragment {
     public Spinner spin_route,spin_shop;
     String[] spinnerArray;
     HashMap<Integer,String> routeId_hashmap,shopkeeperId_hashmap;
-    String admin_id,st_route_id,st_shopkeeper_id;
+    String admin_id,st_route_id,st_shopkeeper_id,st_route_id_sharedpref;
     Button btn_submit;
 
     public AddRouteForShopsFragment() {
@@ -60,6 +60,9 @@ public class AddRouteForShopsFragment extends Fragment {
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         admin_id=prf.getString("admin_id", "");
         Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
+
+        st_route_id_sharedpref=prf.getString("data", "");
+        Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+st_route_id_sharedpref);
 
         //Loading data of Routes in spinner using below function.....
         getRoute();
