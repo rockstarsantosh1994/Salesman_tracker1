@@ -95,7 +95,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
 
                                 for(int i=0; i<json_data.length();i++){
                                     JSONObject json = json_data.getJSONObject(i);
-                                    al1.add("RdId : ".concat(json.getString("RdId")));
+                                    al1.add((json.getString("RdId")));
                                     al2.add("RouteId : ".concat(json.getString("RouteId")));
                                     al3.add("Route : ".concat(json.getString("route")));
                                     al4.add("Shopk Id : ".concat(json.getString("shopkid")));
@@ -179,8 +179,9 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
-                data.putString("data", user_id1);
+                data.putString("data", user_id1);//put string, int, etc in bundle with a key value
                 fragment.setArguments(data);
+                Toast.makeText(getContext(), "Userid"+user_id1, Toast.LENGTH_SHORT).show();
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

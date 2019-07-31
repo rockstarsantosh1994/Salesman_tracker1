@@ -190,7 +190,8 @@ public class AddSalesmanFragment extends Fragment {
                                                   int monthOfYear, int dayOfMonth) {
 
 
-                                et_birtdate.setText((dayOfMonth) + "/" + (monthOfYear + 1)  + "/" + year);
+                                //et_birtdate.setText((dayOfMonth) + "/" + (monthOfYear + 1)  + "/" + year);
+                                et_birtdate.setText(year + "/" + (monthOfYear + 1)  + "/" + (dayOfMonth));
 
                             }
                         }, mYear, mMonth, mDay);

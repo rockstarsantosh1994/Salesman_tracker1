@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +30,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
+import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +45,7 @@ public class AddRouteForShopsFragment extends Fragment {
     public Spinner spin_route,spin_shop;
     String[] spinnerArray;
     HashMap<Integer,String> routeId_hashmap,shopkeeperId_hashmap;
-    String admin_id,st_route_id,st_shopkeeper_id,st_route_id_sharedpref;
+    public String admin_id,route_Detailid,st_shopkeeper_id,st_route_id,rid,sid;
     Button btn_submit;
 
     public AddRouteForShopsFragment() {
@@ -61,14 +66,18 @@ public class AddRouteForShopsFragment extends Fragment {
         admin_id=prf.getString("admin_id", "");
         Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
 
-        st_route_id_sharedpref=prf.getString("data", "");
-        Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+st_route_id_sharedpref);
+        try{
+            route_Detailid=getArguments().getString("data");
+        Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+route_Detailid);}catch (NullPointerException e){e.printStackTrace();}
 
         //Loading data of Routes in spinner using below function.....
         getRoute();
 
         //Loading data of Shops name in spinner using below function.....
         getShops();
+
+        //When Updating these function will be call ....After RecyclerView Click Event Operation perform....
+        fetchRouteDetails();
 
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +126,57 @@ public class AddRouteForShopsFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void fetchRouteDetails(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.FETCH_ROUTE_DETAILS,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //If we are getting success from server
+                        if(TextUtils.isEmpty(response)){
+                            //Creating a shared preference
+                            Toast.makeText(AddRouteForShopsFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+
+                        }else{
+                                Log.d("mytag", "onResponse:FETCH_ROUTE_DETAILS "+response);
+
+                            try {
+
+
+                                JSONObject json = new JSONObject(response);
+                                Log.d("mytag", "onResponse:json Bhau"+json);
+                                    rid = json.getString("rid");
+                                    sid = json.getString("sid");
+
+
+                                Log.d("mytag", "onResponse: rid "+rid+"\nsid"+sid);
+                            }catch (JSONException e){e.printStackTrace();}
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("rdid",route_Detailid);
+
+
+                //returning parameter
+                return params;
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 
     public void getRoute(){

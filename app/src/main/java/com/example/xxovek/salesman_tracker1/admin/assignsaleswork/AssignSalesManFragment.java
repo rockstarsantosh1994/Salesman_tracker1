@@ -94,7 +94,8 @@ public class AssignSalesManFragment extends Fragment {
                                                   int monthOfYear, int dayOfMonth) {
 
 
-                                et_ondate.setText((dayOfMonth) + "/" + (monthOfYear + 1)  + "/" + year);
+                               // et_ondate.setText((dayOfMonth) + "/" + (monthOfYear + 1)  + "/" + year);
+                                et_ondate.setText((year) + "/" + (monthOfYear + 1)  + "/" + dayOfMonth);
 
                             }
                         }, mYear, mMonth, mDay);

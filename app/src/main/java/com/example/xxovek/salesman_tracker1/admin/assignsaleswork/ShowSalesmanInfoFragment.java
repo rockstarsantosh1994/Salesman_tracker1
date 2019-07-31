@@ -33,6 +33,7 @@ import com.example.xxovek.salesman_tracker1.R;
 import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.AddRouteForShopsFragment;
 import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.ShowRouteDetailsFragment;
 import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
+import com.example.xxovek.salesman_tracker1.admin.tabs.AssignSalesmanWorkTab;
 import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
 import org.json.JSONArray;
@@ -190,7 +191,8 @@ public class ShowSalesmanInfoFragment extends Fragment implements MyRecyclerView
                 fragmentTransaction.commit();
                 break;
 
-            case R.id.imageButton: final String st_delid= adapter.getItem(position);
+            case R.id.imageButton:
+                final String st_delid= adapter.getItem(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setIcon(android.R.drawable.ic_lock_power_off);
                 builder.setTitle("Delete");
@@ -213,7 +215,7 @@ public class ShowSalesmanInfoFragment extends Fragment implements MyRecyclerView
 
                                             Toast.makeText(getContext(), "Customer Deleted Successfully"+response, Toast.LENGTH_SHORT).show();
                                             Log.d("mytag", "onResponse:REMOVE_DETAILS "+response);
-                                            Fragment fragment = new AddShopOnRoutesTab();
+                                            Fragment fragment = new AssignSalesmanWorkTab();
                                             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                             fragmentTransaction.replace(R.id.main_container, fragment);
@@ -239,9 +241,9 @@ public class ShowSalesmanInfoFragment extends Fragment implements MyRecyclerView
                                 params.put("id", st_delid);
                                 params.put("tblName", tblname);
                                 params.put("colName", colname);
-//                params.put("password", password);
+                                //params.put("password", password);
 
-                                Log.d("mytag", "\ngetParams: ID "+st_delid+"\ntblname "+tblname+"\ncolname "+colname);
+                                Log.d("mytag", "\nShowSalesmanInfoFragment getParams: ID "+st_delid+"\ntblname "+tblname+"\ncolname "+colname);
 
                                 //returning parameter
                                 return params;

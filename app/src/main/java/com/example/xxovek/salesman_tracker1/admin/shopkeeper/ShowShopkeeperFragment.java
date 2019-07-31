@@ -33,6 +33,7 @@ import com.example.xxovek.salesman_tracker1.R;
 import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.AddRouteForShopsFragment;
 import com.example.xxovek.salesman_tracker1.admin.salesperson.ShowSalesmanFragment;
 import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
+import com.example.xxovek.salesman_tracker1.admin.tabs.ShopKeepersTab;
 import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
 import org.json.JSONArray;
@@ -211,7 +212,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
 
                                             Toast.makeText(getContext(), "Customer Deleted Successfully"+response, Toast.LENGTH_SHORT).show();
                                             Log.d("mytag", "onResponse:REMOVE_DETAILS "+response);
-                                            Fragment fragment = new AddShopOnRoutesTab();
+                                            Fragment fragment = new ShopKeepersTab();
                                             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                             fragmentTransaction.replace(R.id.main_container, fragment);
