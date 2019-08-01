@@ -28,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.tabs.AssignSalesmanWorkTab;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,7 +49,8 @@ public class AssignSalesManFragment extends Fragment {
     DatePickerDialog datePickerDialog;
     String[] spinnerArray;
     HashMap<Integer,String> routeId_hashmap,salesmanId_hashmap;
-    String admin_id,st_route_id,st_salesman_id;
+    String admin_id,st_route_id,st_salesman_id,w_id="",st_Rid,st_wid,st_route,st_sid,st_sname,st_adate,st_status,st_wtime;
+    public static final String TAG="mytag";
 
     public AssignSalesManFragment() {
         // Required empty public constructor
@@ -71,16 +73,25 @@ public class AssignSalesManFragment extends Fragment {
         admin_id=prf.getString("admin_id", "");
         Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
 
+        try{
+            w_id=getArguments().getString("data");
+            Log.d("mytag", "onCreateView:w_id AssignSalesManFragment "+w_id);}
+        catch (NullPointerException e){e.printStackTrace();}
+
         //Loading data of Routes in spinner using below function.....
         getRoute();
 
         //Loading data of Salesman name in spinner using below function.....
         getSalesman();
 
+        //....After RecyclerView Click Event Operation perform....
+        fetchWorkDetails();
+
+
         et_ondate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get Current Date
+                // Get Current Datest_
                 final Calendar c = Calendar.getInstance();
                 mYear = c.get(Calendar.YEAR);
                 mMonth = c.get(Calendar.MONTH);
@@ -120,7 +131,7 @@ public class AssignSalesManFragment extends Fragment {
                                 Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
                                 Log.d("mytag", "ADD_SALES_WORK onResponse: "+response);
 
-                                Fragment fragment = new ShowSalesmanInfoFragment();
+                                Fragment fragment = new AssignSalesmanWorkTab();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.main_container, fragment);
@@ -142,6 +153,11 @@ public class AssignSalesManFragment extends Fragment {
                         params.put("salesmansid",st_salesman_id);
                         params.put("assigndate",et_ondate.getText().toString());
                         params.put("wtime",et_waitingtime.getText().toString());
+                        params.put("w_id",w_id);
+
+                        Log.d(TAG, "ADD_SALES_WORK getParams: admin_id "+admin_id+"\nsource "+st_route_id+
+                                "\nsalesmansid "+st_salesman_id+"\n assigndate "+et_ondate.getText().toString()
+                        +"\nwtime "+et_waitingtime.getText().toString()+"\nw_id "+w_id);
 
                         return params;
                     }
@@ -160,6 +176,70 @@ public class AssignSalesManFragment extends Fragment {
         });
         return view;
     }
+
+    public void fetchWorkDetails(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.FETCH_WORK_DETAILS,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //If we are getting success from server
+                        if(TextUtils.isEmpty(response)){
+                            //Creating a shared preference
+                            Toast.makeText(AssignSalesManFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+
+                        }else{
+
+                            try {
+                                Log.d("mytag", "onResponse:FETCH_WORK_DETAILS "+response);
+
+
+                               JSONObject json = new JSONObject(response);
+                                Log.d("mytag", "onResponse:json Bhau"+json);
+                                st_Rid = json.getString("Rid");
+                                st_wid = json.getString("wid");
+                                st_route = json.getString("route");
+                                st_sid = json.getString("sid");
+                                st_sname = json.getString("sname");
+                                st_adate = json.getString("adate");
+                                st_status = json.getString("status");
+                                st_wtime = json.getString("wtime");
+                                Log.d("mytag", "onResponse:\n rid "+st_Rid+"\nsid "+st_wid+"\nroute "+st_route+"\nsid "+st_sid+"\nsname"
+                                +st_sname+"\nadate "+st_adate+"\nstatus "+st_status+"\nwtime "+st_wtime);
+
+                                et_ondate.setText(st_adate);
+                                et_waitingtime.setText(st_wtime);
+
+                            }catch (JSONException e){e.printStackTrace();}
+                            catch(IndexOutOfBoundsException e){e.printStackTrace();}
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("w_id",String.valueOf(70));
+                params.put("admin_id",admin_id);
+                Log.d(TAG, "getParams: w_id"+w_id);
+
+
+                //returning parameter
+                return params;
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
+
 
     public void getRoute(){
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.GET_ROUTE,

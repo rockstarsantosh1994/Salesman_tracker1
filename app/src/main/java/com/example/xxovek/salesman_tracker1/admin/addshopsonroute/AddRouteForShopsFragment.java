@@ -43,9 +43,9 @@ import java.util.Map;
 
 public class AddRouteForShopsFragment extends Fragment {
     public Spinner spin_route,spin_shop;
-    String[] spinnerArray;
+    String[] spinnerArray,spinnerArray1;
     HashMap<Integer,String> routeId_hashmap,shopkeeperId_hashmap;
-    public String admin_id,route_Detailid,st_shopkeeper_id,st_route_id,rid,sid;
+    public String admin_id,route_Detailid="",st_shopkeeper_id,st_route_id,rid,sid;
     Button btn_submit;
 
     public AddRouteForShopsFragment() {
@@ -68,7 +68,9 @@ public class AddRouteForShopsFragment extends Fragment {
 
         try{
             route_Detailid=getArguments().getString("data");
-        Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+route_Detailid);}catch (NullPointerException e){e.printStackTrace();}
+        Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+route_Detailid);}
+        catch (NullPointerException e){e.printStackTrace();}
+        catch(IndexOutOfBoundsException e){e.printStackTrace();}
 
         //Loading data of Routes in spinner using below function.....
         getRoute();
@@ -76,57 +78,65 @@ public class AddRouteForShopsFragment extends Fragment {
         //Loading data of Shops name in spinner using below function.....
         getShops();
 
-        //When Updating these function will be call ....After RecyclerView Click Event Operation perform....
+        //....After RecyclerView Click Event Operation perform....
         fetchRouteDetails();
 
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.ADD_ROUTE_DETAILS,
-                        new Response.Listener<String>() {
-
-
-                            @Override
-                            public void onResponse(String response) {
-
-
-                                Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
-                                Log.d("mytag", "ADD_ROUTE_DETAILS onResponse: "+response);
-
-                                Fragment fragment = new AddShopOnRoutesTab();
-                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                fragmentTransaction.replace(R.id.main_container, fragment);
-                                fragmentTransaction.addToBackStack(null);
-                                fragmentTransaction.commit();
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("admin_id", admin_id);
-                        params.put("source", st_route_id);
-                        params.put("shop", st_shopkeeper_id);
-
-
-                        return params;
-                    }
-                };
-
-                RequestQueue requestQueue6 = Volley.newRequestQueue(getContext());
-                requestQueue6.add(stringRequest);
+                //Function Call When New Route Details are assign....
+                 addRouteDetails();
             }
         });
 
         return view;
     }
+
+    public void addRouteDetails(){
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.ADD_ROUTE_DETAILS,
+                new Response.Listener<String>() {
+
+
+                    @Override
+                    public void onResponse(String response) {
+
+
+                        Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
+                        Log.d("mytag", "ADD_ROUTE_DETAILS onResponse: "+response);
+
+                        Fragment fragment = new AddShopOnRoutesTab();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.main_container, fragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("admin_id", admin_id);
+                params.put("source", st_route_id);
+                params.put("shop", st_shopkeeper_id);
+                params.put("r_id", route_Detailid);
+
+                Log.d("mytag", "getParams: ADD_ROUTE_DETAILS admin_id"+admin_id+"\nsource"+st_route_id+"\nshop"+st_shopkeeper_id+"\nr_id"+route_Detailid);
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue6 = Volley.newRequestQueue(getContext());
+        requestQueue6.add(stringRequest);
+    }
+
 
     public void fetchRouteDetails(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.FETCH_ROUTE_DETAILS,
@@ -139,19 +149,20 @@ public class AddRouteForShopsFragment extends Fragment {
                             Toast.makeText(AddRouteForShopsFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
 
                         }else{
-                                Log.d("mytag", "onResponse:FETCH_ROUTE_DETAILS "+response);
 
                             try {
+                                Log.d("mytag", "onResponse:FETCH_ROUTE_DETAILS "+response);
 
 
                                 JSONObject json = new JSONObject(response);
                                 Log.d("mytag", "onResponse:json Bhau"+json);
                                     rid = json.getString("rid");
                                     sid = json.getString("sid");
-
-
-                                Log.d("mytag", "onResponse: rid "+rid+"\nsid"+sid);
+                                    Log.d("mytag", "onResponse: rid "+rid+"\nsid"+sid);
+                                    spin_route.setSelection(Integer.parseInt(rid));
+                                    spin_shop.setSelection(Integer.parseInt(sid));
                             }catch (JSONException e){e.printStackTrace();}
+                            catch(IndexOutOfBoundsException e){e.printStackTrace();}
 
                         }
                     }
@@ -262,9 +273,9 @@ public class AddRouteForShopsFragment extends Fragment {
                                 //al = Arrays.asList(n);
 
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                            } catch (JSONException e) {e.printStackTrace(); }
+                            catch(IndexOutOfBoundsException e){e.printStackTrace();}
+
 
                         }
                     }
@@ -327,7 +338,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 }
                                 Integer a1 = al1.size();
                                 String a2 = String.valueOf(a1);
-                                spinnerArray = new String[al1.size()];
+                                spinnerArray1 = new String[al1.size()];
                                 shopkeeperId_hashmap = new HashMap<Integer, String>();
 
                                 // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
@@ -336,7 +347,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 for (int i = 0; i <al1.size(); i++)
                                 {
                                     shopkeeperId_hashmap.put(i,al1.get(i));
-                                    spinnerArray[i] = al1.get(i);
+                                    spinnerArray1[i] = al1.get(i);
                                 }
 
                                     /*ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(AddNewSchemesInformationFragment.this.getActivity(),
@@ -351,7 +362,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 
-                                        st_shopkeeper_id = (String) shopkeeperId_hashmap.get(spin_route.getSelectedItemPosition());
+                                        st_shopkeeper_id = (String) shopkeeperId_hashmap.get(spin_shop.getSelectedItemPosition());
 
 
                                         Toast.makeText(getContext(), "ShopKeeperId Value"+st_shopkeeper_id, Toast.LENGTH_SHORT).show();
@@ -374,9 +385,8 @@ public class AddRouteForShopsFragment extends Fragment {
                                 //al = Arrays.asList(n);
 
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                            } catch (JSONException e) {e.printStackTrace(); }
+
 
                         }
                     }
