@@ -159,6 +159,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
          return mData1.get(id);
     }
 
+    public String getItem2(int id) {
+        return mData2.get(id);
+    }
+
+    public String getItem3(int id) {
+        return mData3.get(id);
+    }
+
     // allows clicks events to be caught
     public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;

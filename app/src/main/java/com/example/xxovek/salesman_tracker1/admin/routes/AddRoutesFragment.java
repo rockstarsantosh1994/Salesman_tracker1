@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.tabs.RoutesFragmentTab;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +33,7 @@ public class AddRoutesFragment extends Fragment {
 
     public EditText et_source,et_destination;
     public Button btn_submit,btn_reset;
-    String admin_id;
+    String admin_id,r_id="",st_source,st_dest;
 
 
     public AddRoutesFragment() {
@@ -45,12 +48,26 @@ public class AddRoutesFragment extends Fragment {
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         admin_id=prf.getString("admin_id", "");
         Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
+
+        try{
+            r_id=getArguments().getString("data");
+            st_source=getArguments().getString("source");
+            st_dest=getArguments().getString("dest");
+            Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+r_id);}
+        catch (NullPointerException e){e.printStackTrace();}
+
         et_source=view.findViewById(R.id.et_source);
         et_destination=view.findViewById(R.id.et_destination);
+        //when we click on update via Recycler then it will be filled....
+        et_source.setText(st_source);
+        et_destination.setText(st_dest);
+
         btn_submit=view.findViewById(R.id.btn_submit);
         btn_reset=view.findViewById(R.id.btn_reset);
-        final String source= et_source.getText().toString();
-        final String destination= et_destination.getText().toString();
+
+
+
+
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,12 +89,12 @@ public class AddRoutesFragment extends Fragment {
                                 //JSONObject userJson = obj.getJSONObject("tax_info");
                                 // int len = obj.length();
 
-                               /* Fragment fragment = new ProductsAndServices();
+                                Fragment fragment = new RoutesFragmentTab();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.main_container, fragment);
                                 fragmentTransaction.addToBackStack(null);
-                                fragmentTransaction.commit();*/
+                                fragmentTransaction.commit();
                             }
                         },
                         new Response.ErrorListener() {
@@ -89,9 +106,16 @@ public class AddRoutesFragment extends Fragment {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
+
+                        final String source= et_source.getText().toString();
+                        final String destination= et_destination.getText().toString();
                         params.put("admin_id", admin_id);
                         params.put("source",source);
                         params.put("dest",destination);
+                        params.put("r_id",r_id);
+
+                        Log.d("mytag", "getParams:ADD_ROUTE \nadmin_id "+admin_id+"\n source "+source+
+                                "\n destination "+destination+ "\n r_id "+r_id);
 
                         return params;
                     }

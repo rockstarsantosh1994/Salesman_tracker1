@@ -100,8 +100,8 @@ public class ShowRoutesFragment extends Fragment implements MyRecyclerViewAdapte
                                 for(int i=0; i<json_data.length();i++){
                                     JSONObject json = json_data.getJSONObject(i);
                                     al1.add((json.getString("RouteId")));
-                                    al2.add("Source : ".concat(json.getString("source")));
-                                    al3.add("Destination : ".concat(json.getString("dest")));
+                                    al2.add("".concat(json.getString("source")));
+                                    al3.add(" ".concat(json.getString("dest")));
                                     al4.add("Created At : ".concat(json.getString("creattime")));
                                     al5.add("Updated At : ".concat(json.getString("updatetime")));
 
@@ -172,15 +172,20 @@ public class ShowRoutesFragment extends Fragment implements MyRecyclerViewAdapte
 
         int id=view.getId();
         String user_id1 = adapter.getItem(position);
+        String source = adapter.getItem2(position);
+        String dest = adapter.getItem3(position);
+
         // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
         Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
 
         switch (id){
-            case R.id.t2:Fragment fragment = new AddRouteForShopsFragment();
+            case R.id.t2:Fragment fragment = new AddRoutesFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
                 data.putString("data", user_id1);
+                data.putString("source", source);
+                data.putString("dest", dest);
                 fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
