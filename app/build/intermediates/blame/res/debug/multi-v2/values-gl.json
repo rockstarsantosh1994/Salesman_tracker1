@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
+            "outputFile": "/home/rockstar/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
             "map": [
                 {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-gl/values-gl.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,217,329,437,522,624,750,834,915,997,1104,1213,1312,1420,1524,1631,1790,1890",
-                        "endColumns": "111,111,107,84,101,125,83,80,81,106,108,98,107,103,106,158,99,81",
-                        "endOffsets": "212,324,432,517,619,745,829,910,992,1099,1208,1307,1415,1519,1626,1785,1885,1967"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,217,329,437,522,624,750,834,915,997,1104,1213,1312,1420,1524,1631,1790,4660",
-                        "endColumns": "111,111,107,84,101,125,83,80,81,106,108,98,107,103,106,158,99,81",
-                        "endOffsets": "212,324,432,517,619,745,829,910,992,1099,1208,1307,1415,1519,1626,1785,1885,4737"
-                    }
-                },
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/res/values-gl/values.xml",
+                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/50ad35efc3a137fbc0ed43f724e62147/res/values-gl/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-gl/values-gl.xml",
+                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/33c6cdb6a61bf7f85ef5148ededb1dff/res/values-gl/values-gl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/0f7f0b0d3303ac9957ecc2bb51f3b4e9/res/values-gl/values.xml",
+                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/8b80ee96e1b4f2becb314d74975f2ee5/res/values-gl/values-gl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,217,329,437,522,624,750,834,915,997,1104,1213,1312,1420,1524,1631,1790,1890",
+                        "endColumns": "111,111,107,84,101,125,83,80,81,106,108,98,107,103,106,158,99,81",
+                        "endOffsets": "212,324,432,517,619,745,829,910,992,1099,1208,1307,1415,1519,1626,1785,1885,1967"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,217,329,437,522,624,750,834,915,997,1104,1213,1312,1420,1524,1631,1790,4660",
+                        "endColumns": "111,111,107,84,101,125,83,80,81,106,108,98,107,103,106,158,99,81",
+                        "endOffsets": "212,324,432,517,619,745,829,910,992,1099,1208,1307,1415,1519,1626,1785,1885,4737"
+                    }
+                },
+                {
+                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/e3e2921c4c969fb6b3f86d567c6a1887/res/values-gl/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

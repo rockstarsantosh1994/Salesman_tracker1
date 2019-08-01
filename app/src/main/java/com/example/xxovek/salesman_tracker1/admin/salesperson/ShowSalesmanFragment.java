@@ -174,7 +174,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
         Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
 
         switch (id){
-            case R.id.t2:Fragment fragment = new AddRouteForShopsFragment();
+            case R.id.t2:Fragment fragment = new AddSalesmanFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data

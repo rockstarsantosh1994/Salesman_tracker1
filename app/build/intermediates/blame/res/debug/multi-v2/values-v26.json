@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "/home/rockstar/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/res/values-v26/values-v26.xml",
+                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/0ae361bfa10412a5847a5c8339cacf59/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-v26/values-v26.xml",
+                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/8b80ee96e1b4f2becb314d74975f2ee5/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

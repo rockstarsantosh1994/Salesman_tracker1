@@ -33,6 +33,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
+import com.example.xxovek.salesman_tracker1.admin.assignsaleswork.AssignSalesManFragment;
 import com.example.xxovek.salesman_tracker1.admin.shopkeeper.GeocodingLocation;
 import com.example.xxovek.salesman_tracker1.admin.tabs.AssignSalesmanWorkTab;
 import com.example.xxovek.salesman_tracker1.admin.tabs.SalesPersonFragmentTab;
@@ -57,10 +58,11 @@ public class AddSalesmanFragment extends Fragment {
     public Spinner  spin_gender,spin_personstatus,spin_country,spin_state,spin_city;
     public Button btn_add,btn_reset;
     public CheckBox cb_bankdetails,cb_sameasabove;
-    public String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name,st_gender,st_personstatus;
+    public String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name,st_gender,st_personstatus,st_saleinfo="";
     HashMap<Integer, String> spinnerMap3;
     private int mYear, mMonth, mDay;
     DatePickerDialog datePickerDialog;
+
 
 
 
@@ -79,6 +81,13 @@ public class AddSalesmanFragment extends Fragment {
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         admin_id=prf.getString("admin_id", "");
         Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
+
+        try{
+            st_saleinfo=getArguments().getString("data");
+
+            Log.d("mytag", "onCreateView:saleinfo id in AddSalesmanFragment "+st_saleinfo);}
+        catch (NullPointerException e){e.printStackTrace();}
+
 
         //TextView Declaration....
         tv_personaccountnumber= view.findViewById(R.id.tv_personaccountnumber);
@@ -123,16 +132,19 @@ public class AddSalesmanFragment extends Fragment {
         //Getting Person Status Data in Spinner....
         getPersonStatusSpin();
 
+        //Fetching all Record for update purpose using below function........
+        fetchSaleInfo();
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String permanent_address=et_permanantadd.getText().toString();
+             /*   String permanent_address=et_permanantadd.getText().toString();
                 String pincode=et_zipcode.getText().toString();
                 address=permanent_address+" "+st_city_id+" "+st_state_name+" "+st_country_id+" "+pincode;
                 Log.d("mytag", "onClick:String of Address "+address);
                 GeocodingLocation locationAddress = new GeocodingLocation();
                 locationAddress.getAddressFromLocation(address,
-                        getContext(), new GeocoderHandler());
+                        getContext(), new GeocoderHandler());*/
 
                 //Registering add Salesman...
                 salesRegistration();
@@ -221,6 +233,95 @@ public class AddSalesmanFragment extends Fragment {
         }
     }
 
+    public void fetchSaleInfo(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.FETCH_SALE_INFO,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //If we are getting success from server
+                        if(TextUtils.isEmpty(response)){
+                            //Creating a shared preference
+                            Toast.makeText(AddSalesmanFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+
+                        }else{
+
+                            try {
+                                Log.d("mytag", "onResponse:FETCH_SALE_INFO "+response);
+
+
+
+                                JSONObject json = new JSONObject(response);
+                                String st_empid=json.getString("emp_id");
+                                et_firstname.setText(json.getString("efname"));
+                                et_lastname.setText(json.getString("elname"));
+                                et_email.setText(json.getString("eemail"));
+                                et_birtdate.setText(json.getString("edob"));
+                                et_permanentno.setText(json.getString("emobile"));
+                                et_alternateno.setText(json.getString("emobile1"));
+                                et_alternateno.setText(json.getString("emobile1"));
+                                String st_gender=json.getString("egender");
+                                String st_status=json.getString("estatus");
+                                if((!json.getString("eAccountNo").equals("")) || (!json.getString("eifscCode").equals(""))  || (!json.getString("ebranch").equals(""))) {
+                                    tv_personaccountnumber.setVisibility(View.VISIBLE);
+                                    tv_ifsc.setVisibility(View.VISIBLE);
+                                    tv_branch.setVisibility(View.VISIBLE);
+                                    et_personaccountnumber.setVisibility(View.VISIBLE);
+                                    et_ifsc.setVisibility(View.VISIBLE);
+                                    et_branch.setVisibility(View.VISIBLE);
+                                    et_personaccountnumber.setText(json.getString("eAccountNo"));
+                                    et_ifsc.setText(json.getString("eifscCode"));
+                                    et_branch.setText(json.getString("ebranch"));
+                                }
+                                else{
+                                    tv_personaccountnumber.setVisibility(View.GONE);
+                                    tv_ifsc.setVisibility(View.GONE);
+                                    tv_branch.setVisibility(View.GONE);
+                                    et_personaccountnumber.setVisibility(View.GONE);
+                                    et_ifsc.setVisibility(View.GONE);
+                                    et_branch.setVisibility(View.GONE);
+                                }
+                                String st_country=json.getString("ecountry");
+                                String st_state=json.getString("estate");
+                                String st_city=json.getString("ecity");
+                                et_zipcode.setText(json.getString("epincode"));
+                                et_permanantadd.setText(json.getString("eaddress"));
+                                et_residentialadd.setText(json.getString("eaddress1"));
+                                String path=json.getString("eprofilePic");
+
+                                Log.d("mytag", "onResponse:json Bhau"+json);
+
+
+                            }catch (JSONException e){e.printStackTrace();}
+                            catch(IndexOutOfBoundsException e){e.printStackTrace();}
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("saleinfo",st_saleinfo);
+                params.put("admin_id",admin_id);
+                Log.d("mytag", "getParams: saleinfo"+st_saleinfo);
+
+
+                //returning parameter
+                return params;
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
+
     public void salesRegistration(){
         final StringRequest salesRegistration = new StringRequest(Request.Method.POST, ConfigUrls.ADD_SALES_REGISTRATION,
                 new Response.Listener<String>() {
@@ -272,6 +373,8 @@ public class AddSalesmanFragment extends Fragment {
 
                 params.put("lat", String.valueOf(19.000));
                 params.put("long", String.valueOf(73.00));
+
+                params.put("emp_id",st_saleinfo);
 
                 Log.d("mytag", "getParams: Firstname"+et_firstname.getText().toString()+"\nLastname"+et_lastname.getText().toString()+"\nEmail-id"+et_email.getText().toString()+
                         "\nPermanent Number"+et_permanentno.getText().toString()+"\nAlternate Number"+et_alternateno.getText().toString()+"\nBirthDate"+ et_birtdate.getText().toString()+"\nGender "+st_gender+"\nCountry "+st_country_id+
@@ -441,9 +544,8 @@ public class AddSalesmanFragment extends Fragment {
                                 //al = Arrays.asList(n);
 
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                            } catch (JSONException e) { e.printStackTrace();}
+                            catch(NullPointerException e){e.printStackTrace();}
 
                         }
                     }
@@ -561,6 +663,7 @@ public class AddSalesmanFragment extends Fragment {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
+                            catch(NullPointerException e){e.printStackTrace();}
 
                         }
                     }
@@ -671,6 +774,7 @@ public class AddSalesmanFragment extends Fragment {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
+                            catch(NullPointerException e){e.printStackTrace();}
 
                         }
                     }
