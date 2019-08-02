@@ -31,6 +31,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.ShowRouteDetailsFragment;
+import com.example.xxovek.salesman_tracker1.admin.salesperson.AddSalesmanFragment;
 import com.example.xxovek.salesman_tracker1.admin.tabs.ShopKeepersTab;
 
 import org.json.JSONArray;
@@ -49,7 +50,7 @@ public class AddShopkeeperFragment extends Fragment {
     public Spinner spin_country,spin_state,spin_city;
     public CheckBox cb_sameasabove;
     public Button btn_add,btn_reset;
-    String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name;
+    String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name,st_shopinfo="";
     HashMap<Integer, String> spinnerMap3;
 
     public AddShopkeeperFragment() {
@@ -66,6 +67,12 @@ public class AddShopkeeperFragment extends Fragment {
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         admin_id=prf.getString("admin_id", "");
         Log.d("mytag", "onCreateView:Admin_id in AddRoutesFragment "+admin_id);
+
+        try{
+            st_shopinfo=getArguments().getString("data");
+
+            Log.d("mytag", "onCreateView:shopinfo_id in AddShopkeeperFragment "+st_shopinfo);}
+        catch (NullPointerException e){e.printStackTrace();}
 
         //EditText Declaration.....
         et_contactpersonname=view.findViewById(R.id.et_contactpersonname);
@@ -105,20 +112,23 @@ public class AddShopkeeperFragment extends Fragment {
         //Getting Country Data in Spinner......
         getCountrySpin();
 
+        //Fetching all Record for update purpose using below function........
+        fetchShopsInfo();
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String permanent_address=et_permanentadd.getText().toString();
+            /*    String permanent_address=et_permanentadd.getText().toString();
                 String pincode=et_pincode.getText().toString();
                 address=permanent_address+" "+st_city_id+" "+st_state_name+" "+st_country_id+" "+pincode;
                 Log.d("mytag", "onClick:String of Address "+address);
                 GeocodingLocation locationAddress = new GeocodingLocation();
                 locationAddress.getAddressFromLocation(address,
                         getContext(), new GeocoderHandler());
-
+*/
 
                 //function will insert data in shopKeeperRegistration.php api....
-                shopKeeperRegistration();
+                addshopKeeperRegistration();
             }
 
         });
@@ -156,7 +166,7 @@ public class AddShopkeeperFragment extends Fragment {
     }
 
 
-    public void shopKeeperRegistration(){
+    public void addshopKeeperRegistration(){
         final StringRequest saveRegistration = new StringRequest(Request.Method.POST, ConfigUrls.ADD_SHOP_KEEPER_REGISTRATION,
                 new Response.Listener<String>() {
 
@@ -196,6 +206,14 @@ public class AddShopkeeperFragment extends Fragment {
                 params.put("shoppincode", et_pincode.getText().toString());
                 params.put("address1", et_permanentadd.getText().toString());
                 params.put("address2", et_residentialadd.getText().toString());
+                params.put("shopkeeper_id",st_shopinfo);
+                if(st_shopinfo.equals(""))
+                {
+                    params.put("shopid","Add");
+                }
+                else{
+                    params.put("shopid","Update");
+                }
 
                 params.put("lat", String.valueOf(19.000));
                 params.put("long", String.valueOf(73.00));
@@ -213,7 +231,70 @@ public class AddShopkeeperFragment extends Fragment {
         requestQueue6.add(saveRegistration);
     }
 
+    public void fetchShopsInfo(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.FETCH_SHOP_INFO,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //If we are getting success from server
+                        if(TextUtils.isEmpty(response)){
+                            //Creating a shared preference
+                            Toast.makeText(AddShopkeeperFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
 
+                        }else{
+
+                            try {
+                                Log.d("mytag", "onResponse:FETCH_SALE_INFO "+response);
+
+
+
+                                JSONObject json = new JSONObject(response);
+                                String st_empid=json.getString("emp_id");
+                                et_contactpersonname.setText(json.getString("efname"));
+                                et_mailid.setText(json.getString("eemail"));
+                                et_mobileno.setText(json.getString("emobile"));
+                                et_alternateno.setText(json.getString("emobile1"));
+                                String st_country=json.getString("ecountry");
+                                String st_state=json.getString("estate");
+                                String st_city=json.getString("ecity");
+                                et_pincode.setText(json.getString("epincode"));
+                                et_permanentadd.setText(json.getString("eaddress"));
+                                et_residentialadd.setText(json.getString("eaddress1"));
+                                String st_joindate=json.getString("ejoin_date");
+
+                                Log.d("mytag", "onResponse:json Bhau"+json);
+
+
+                            }catch (JSONException e){e.printStackTrace();}
+                            catch(IndexOutOfBoundsException e){e.printStackTrace();}
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("shopinfo",st_shopinfo);
+                params.put("admin_id",admin_id);
+                Log.d("mytag", "getParams: shopinfo"+st_shopinfo);
+
+
+                //returning parameter
+                return params;
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
 
     public void getCountrySpin(){
         StringRequest stringRequest1 = new StringRequest(Request.Method.POST, ConfigUrls.COUNTRY_URL,

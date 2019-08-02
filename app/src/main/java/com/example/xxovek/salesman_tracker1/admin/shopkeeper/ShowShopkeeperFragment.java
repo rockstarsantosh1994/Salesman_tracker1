@@ -178,7 +178,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
         Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
 
         switch (id){
-            case R.id.t2:Fragment fragment = new AddRouteForShopsFragment();
+            case R.id.t2:Fragment fragment = new AddShopkeeperFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data

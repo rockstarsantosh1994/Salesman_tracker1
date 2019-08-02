@@ -21,4 +21,5 @@ public class ConfigUrls {
     public static final String FETCH_ROUTE_DETAILS =ROOT_URL+"fetch_route_detail";
     public static final String  FETCH_WORK_DETAILS =ROOT_URL+"fetch_work_detail1";
     public static final String  FETCH_SALE_INFO =ROOT_URL+"fetchSalesInfo";
+    public static final String  FETCH_SHOP_INFO =ROOT_URL+"fetchShopsInfo";
 }
