@@ -79,7 +79,9 @@ public class AddRouteForShopsFragment extends Fragment {
         getShops();
 
         //....After RecyclerView Click Event Operation perform....
-        fetchRouteDetails();
+        if(!route_Detailid.equals("")) {
+            fetchRouteDetails();
+        }
 
 
         btn_submit.setOnClickListener(new View.OnClickListener() {

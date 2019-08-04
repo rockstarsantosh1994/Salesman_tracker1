@@ -98,11 +98,11 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                                 for(int i=0; i<json_data.length();i++){
                                     JSONObject json = json_data.getJSONObject(i);
                                     al1.add((json.getString("Emp_id")));
-                                    al2.add("Full Name : ".concat(json.getString("fullname")));
-                                    al3.add("Email : ".concat(json.getString("email")));
-                                    al4.add("Mobile : ".concat(json.getString("mobile")));
-                                    al5.add("Status : ".concat(json.getString("status")));
-                                    al6.add("Address : ".concat(json.getString("address")));
+                                    al2.add("".concat(json.getString("fullname")));
+                                    al3.add("".concat(json.getString("email")));
+                                    al4.add("".concat(json.getString("mobile")));
+                                    al5.add("".concat(json.getString("status")));
+                                    al6.add("".concat(json.getString("address")));
                                    // st_assignid =(json.getString("status"));
 
 

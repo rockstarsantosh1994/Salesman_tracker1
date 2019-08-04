@@ -1556,6 +1556,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_recycler_row_show.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/res/layout/recycler_row_show.xml"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/4aa2156c4211a0ac07a5c3b3508c484f/res/drawable/common_google_signin_btn_text_light_normal.xml"
     },

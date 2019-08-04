@@ -50,7 +50,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.recyclerview_row, parent, false);
+        View view = mInflater.inflate(R.layout.recycler_row_show, parent, false);
 
         return new ViewHolder(view);
     }
@@ -82,6 +82,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.myTextView8.setText(t8);
         holder.myTextView9.setText(t9);
         holder.myTextView10.setText(t10);
+
         if (flag.equals("0")){
             //holder.mybutton.setVisibility(View.VISIBLE);
         }
@@ -134,12 +135,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             myTextView8 = itemView.findViewById(R.id.t8);
             myTextView9 = itemView.findViewById(R.id.t9);
             myTextView10 = itemView.findViewById(R.id.t10);
-            mybutton = itemView.findViewById(R.id.imageButton);
+            //mybutton = itemView.findViewById(R.id.imageButton);
             myTextView1.setVisibility(View.INVISIBLE);
 
 
             itemView.setOnClickListener(this);
-            mybutton.setOnClickListener(this);
+           // mybutton.setOnClickListener(this);
             myTextView2.setOnClickListener(this);
             myTextView3.setOnClickListener(this);
             myTextView4.setOnClickListener(this);

@@ -113,7 +113,9 @@ public class AddShopkeeperFragment extends Fragment {
         getCountrySpin();
 
         //Fetching all Record for update purpose using below function........
-        fetchShopsInfo();
+        if(!st_shopinfo.equals("")) {
+            fetchShopsInfo();
+        }
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +134,8 @@ public class AddShopkeeperFragment extends Fragment {
             }
 
         });
+
+
 
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,72 +167,6 @@ public class AddShopkeeperFragment extends Fragment {
             }
             Log.d("mytag", "handleMessage: Transferring Address to latlong"+locationAddress);
         }
-    }
-
-
-    public void addshopKeeperRegistration(){
-        final StringRequest saveRegistration = new StringRequest(Request.Method.POST, ConfigUrls.ADD_SHOP_KEEPER_REGISTRATION,
-                new Response.Listener<String>() {
-
-
-                    @Override
-                    public void onResponse(String response) {
-
-
-                        Toast.makeText(getContext(), "ADD_SHOP_KEEPER_REGISTRATION onResponse\n\n"+response, Toast.LENGTH_SHORT).show();
-                        Log.d("mytag", "ADD_SHOP_KEEPER_REGISTRATION onResponse: "+response);
-
-                        Fragment fragment = new ShopKeepersTab();
-                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.main_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("admin_id", admin_id);
-                params.put("contactperson", et_contactpersonname.getText().toString());
-                params.put("mobileno", et_mobileno.getText().toString());
-                params.put("mobileno1", et_alternateno.getText().toString());
-                params.put("emailid", et_mailid.getText().toString());
-                params.put("country", st_country_id);
-                params.put("state", st_state_name);
-                params.put("city", st_city_id);
-                params.put("shoppincode", et_pincode.getText().toString());
-                params.put("address1", et_permanentadd.getText().toString());
-                params.put("address2", et_residentialadd.getText().toString());
-                params.put("shopkeeper_id",st_shopinfo);
-                if(st_shopinfo.equals(""))
-                {
-                    params.put("shopid","Add");
-                }
-                else{
-                    params.put("shopid","Update");
-                }
-
-                params.put("lat", String.valueOf(19.000));
-                params.put("long", String.valueOf(73.00));
-
-                Log.d("mytag", "getParams: "+et_contactpersonname.getText().toString()+"\n"+et_mobileno.getText().toString()+
-                       "\n"+et_alternateno.getText().toString()+"\n"+ et_mailid.getText().toString()+"\n"+st_country_id+
-                        "\n"+ st_state_name+"\n"+st_city_id+"\n"+ et_pincode.getText().toString()+"\n"+ et_permanentadd.getText().toString()+
-                        "\n"+et_residentialadd.getText().toString());
-
-                return params;
-            }
-        };
-
-        RequestQueue requestQueue6 = Volley.newRequestQueue(getContext());
-        requestQueue6.add(saveRegistration);
     }
 
     public void fetchShopsInfo(){
@@ -295,6 +233,72 @@ public class AddShopkeeperFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
     }
+
+    public void addshopKeeperRegistration(){
+        final StringRequest saveRegistration = new StringRequest(Request.Method.POST, ConfigUrls.ADD_SHOP_KEEPER_REGISTRATION,
+                new Response.Listener<String>() {
+
+
+                    @Override
+                    public void onResponse(String response) {
+
+
+                        Toast.makeText(getContext(), "ADD_SHOP_KEEPER_REGISTRATION onResponse\n\n"+response, Toast.LENGTH_SHORT).show();
+                        Log.d("mytag", "ADD_SHOP_KEEPER_REGISTRATION onResponse: "+response);
+
+                        Fragment fragment = new ShopKeepersTab();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.main_container, fragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("admin_id", admin_id);
+                params.put("contactperson", et_contactpersonname.getText().toString());
+                params.put("mobileno", et_mobileno.getText().toString());
+                params.put("mobileno1", et_alternateno.getText().toString());
+                params.put("emailid", et_mailid.getText().toString());
+                params.put("country", st_country_id);
+                params.put("state", st_state_name);
+                params.put("city", st_city_id);
+                params.put("shoppincode", et_pincode.getText().toString());
+                params.put("address1", et_permanentadd.getText().toString());
+                params.put("address2", et_residentialadd.getText().toString());
+                params.put("shopkeeper_id",st_shopinfo);
+                if(st_shopinfo.equals(""))
+                {
+                    params.put("shopid","Add");
+                }
+                else{
+                    params.put("shopmanid","Update");
+                }
+
+                params.put("lat", String.valueOf(19.000));
+                params.put("long", String.valueOf(73.00));
+
+                Log.d("mytag", "getParams: "+et_contactpersonname.getText().toString()+"\n"+et_mobileno.getText().toString()+
+                       "\n"+et_alternateno.getText().toString()+"\n"+ et_mailid.getText().toString()+"\n"+st_country_id+
+                        "\n"+ st_state_name+"\n"+st_city_id+"\n"+ et_pincode.getText().toString()+"\n"+ et_permanentadd.getText().toString()+
+                        "\n"+et_residentialadd.getText().toString());
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue6 = Volley.newRequestQueue(getContext());
+        requestQueue6.add(saveRegistration);
+    }
+
 
     public void getCountrySpin(){
         StringRequest stringRequest1 = new StringRequest(Request.Method.POST, ConfigUrls.COUNTRY_URL,

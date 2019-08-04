@@ -85,7 +85,9 @@ public class AssignSalesManFragment extends Fragment {
         getSalesman();
 
         //....After RecyclerView Click Event Operation perform....
-        fetchWorkDetails();
+        if(!w_id.equals("")) {
+            fetchWorkDetails();
+        }
 
 
         et_ondate.setOnClickListener(new View.OnClickListener() {

@@ -20,6 +20,8 @@ public class ConfigUrls {
     public static final String REMOVE_DETAILS =ROOT_URL+"removeDetails";
     public static final String FETCH_ROUTE_DETAILS =ROOT_URL+"fetch_route_detail";
     public static final String  FETCH_WORK_DETAILS =ROOT_URL+"fetch_work_detail1";
-    public static final String  FETCH_SALE_INFO =ROOT_URL+"fetchSalesInfo";
+    public static final String  FETCH_SALE_INFO =ROOT_URL+"fetchSalesmanInfo1";
     public static final String  FETCH_SHOP_INFO =ROOT_URL+"fetchShopsInfo";
+    public static final String  GET_STATES_BY_ID =ROOT_URL+"getStateBy_Id";
+    public static final String  GET_CITY_BY_ID =ROOT_URL+"getCity_byId";
 }

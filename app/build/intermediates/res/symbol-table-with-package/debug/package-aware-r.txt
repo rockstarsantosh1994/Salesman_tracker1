@@ -692,6 +692,7 @@ color foreground_material_light
 color fuchsia
 color gray
 color green
+color grey_500
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color lime
@@ -1197,6 +1198,14 @@ id hybrid_map
 id icon
 id icon_group
 id icon_only
+id idBottomLayout
+id idCardView
+id idLastLayout
+id idLinearLayout
+id idLinearLayoutProductImage
+id idSecondLastLayout
+id idTopLayout
+id idTopLayout1
 id ifRoom
 id image
 id imageButton
@@ -1207,6 +1216,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id iv_icon
+id iv_img
 id largeLabel
 id left
 id light
@@ -1464,6 +1474,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout recycler_row_show
 layout recyclerview_row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
