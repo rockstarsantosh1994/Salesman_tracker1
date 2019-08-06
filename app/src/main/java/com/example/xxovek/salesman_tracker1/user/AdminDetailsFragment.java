@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 
 import org.json.JSONArray;
@@ -74,10 +75,10 @@ public class AdminDetailsFragment extends Fragment {
         String type = "user_profile";
 
 
-        final String LOGIN_URL = "http://track.xxovek.com/public_html/salesandroid/admininfo";
+        //final String LOGIN_URL = "http://track.xxovek.com/public_html/salesandroid/admininfo";
 
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.ADMIN_INFO,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

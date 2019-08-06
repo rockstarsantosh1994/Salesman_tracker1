@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.CheckedOutputStream;
 
 
 public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
@@ -74,7 +75,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
         final String LOGIN_URL = "http://track.xxovek.com/src/display_route_details";
 
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_ROUTE_DETAILS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

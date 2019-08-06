@@ -78,7 +78,7 @@ public class ShowRoutesFragment extends Fragment implements MyRecyclerViewAdapte
         final String LOGIN_URL = "http://track.xxovek.com/src/display_routes";
 
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_ROUTE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

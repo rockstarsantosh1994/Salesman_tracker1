@@ -43,6 +43,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -61,6 +62,7 @@ public class AddSalesmanFragment extends Fragment {
     public String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name,st_gender,st_personstatus,st_saleinfo="",fetch_st_state="",fetch_st_city="";
     HashMap<Integer, String> spinnerMap3,spinnerMap4;
     private int mYear, mMonth, mDay;
+    public int state,city;
     DatePickerDialog datePickerDialog;
 
 
@@ -297,17 +299,18 @@ public class AddSalesmanFragment extends Fragment {
                                     et_branch.setVisibility(View.GONE);
                                 }
                                 String st_country=json.getString("ecountry");
-                                spin_country.setSelection(100);
-                                fetch_st_state=json.getString("state_id");
-                                Log.d("mytag", "onResponse:fetch_st_state"+fetch_st_state);
-                                int state= Integer.parseInt(fetch_st_state)-1;
-                                Log.d("mytag", "onResponse:state"+state);
-                                spin_state.setSelection(21);
-                                fetch_st_city=json.getString("city_id");
-                                Log.d("mytag", "onResponse:fetch_st_city"+fetch_st_city);
-                                int city=Integer.parseInt(fetch_st_city)-1;
-                                Log.d("mytag", "onResponse:city"+city);
-                                spin_city.setSelection(2723);
+                                try {
+                                    fetch_st_state = json.getString("state_id");
+                                    Log.d("mytag", "onResponse:fetch_st_state" + fetch_st_state);
+                                    state = Integer.parseInt(fetch_st_state) - 1;
+                                    Log.d("mytag", "onResponse:state" + state);
+
+                                    fetch_st_city = json.getString("city_id");
+                                    Log.d("mytag", "onResponse:fetch_st_city" + fetch_st_city);
+                                    city = Integer.parseInt(fetch_st_city) - 1;
+                                    Log.d("mytag", "onResponse:city" + city);
+                                }catch (NullPointerException e){e.printStackTrace();}
+                                catch (NumberFormatException e){e.printStackTrace();}
                                 et_zipcode.setText(json.getString("epincode"));
                                 et_permanantadd.setText(json.getString("eaddress"));
                                 et_residentialadd.setText(json.getString("eaddress1"));
@@ -652,6 +655,11 @@ public class AddSalesmanFragment extends Fragment {
                                     int spinnerPosition1 = dataAdapter.getPosition(a13);
                                     countrys2.setSelection(spinnerPosition1);
 */
+
+                                 /*  if(fetch_st_state.equals("")){
+                                       spin_state.setSelection(state);
+                                   }*/
+
                                     spin_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
@@ -885,7 +893,9 @@ public class AddSalesmanFragment extends Fragment {
                                         spinnerMap6.put(i, al1.get(i));
                                         spinnercityArray2[i] = al1.get(i);
                                     }*/
-
+                                   // if(fetch_st_city.equals("")){
+                                       // spin_state.setSelection(2724);
+                                   // }
                                     spin_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {

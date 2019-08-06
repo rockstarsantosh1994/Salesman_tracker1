@@ -79,7 +79,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
         final String LOGIN_URL = "http://track.xxovek.com/src/display_shopkeeper";
 
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_SHOPKEEPER,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

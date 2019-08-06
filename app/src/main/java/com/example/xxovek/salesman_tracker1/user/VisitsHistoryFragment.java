@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 
 import org.json.JSONArray;
@@ -83,13 +84,13 @@ public class VisitsHistoryFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... params) {
-            String countries_url = "http://track.xxovek.com/public_html/salesandroid/historyclients";
+            //String countries_url = "http://track.xxovek.com/public_html/salesandroid/historyclients";
 
             try {
                 String uid = params[0];
 
 
-                URL url = new URL(countries_url);
+                URL url = new URL(ConfigUrls.HISTORY_CLIENTS);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);

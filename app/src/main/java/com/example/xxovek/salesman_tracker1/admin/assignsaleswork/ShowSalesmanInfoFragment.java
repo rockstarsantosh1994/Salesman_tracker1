@@ -78,7 +78,7 @@ public class ShowSalesmanInfoFragment extends Fragment implements MyRecyclerView
         final String LOGIN_URL = "http://track.xxovek.com/src/display_work_details";
 
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_WORK_DETAILS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

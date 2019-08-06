@@ -27,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 
 import org.json.JSONArray;
@@ -114,10 +115,10 @@ public class TodaysVisits1Fragment extends Fragment implements View.OnClickListe
 //        TodaysVisits12 newTodaysVisits12 = new TodaysVisits12(this);
 //        newTodaysVisits12.execute(cid);
 
-        final String LOGIN_URL = "http://track.xxovek.com/public_html/salesandroid/clients1";
+       // final String LOGIN_URL = "http://track.xxovek.com/public_html/salesandroid/clients1";
 
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.CLIENTS1,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

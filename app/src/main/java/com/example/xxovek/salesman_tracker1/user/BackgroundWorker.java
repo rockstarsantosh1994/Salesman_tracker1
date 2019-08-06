@@ -3,9 +3,12 @@ package com.example.xxovek.salesman_tracker1.user;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
+
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,7 +57,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 String username = params[1];
                 String password = params[2];
                 //String date = params[3];
-                URL url = new URL(login_url);
+                URL url = new URL(ConfigUrls.LOGIN_URL);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);

@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 
 import org.json.JSONArray;
@@ -88,7 +89,7 @@ public class UserProfile extends AppCompatActivity {
                 String cid = params[1];
 
 
-                URL url = new URL(countries_url);
+                URL url = new URL(ConfigUrls.CLIENTS_INFO);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
