@@ -83,7 +83,7 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
         };
        //schedule the task to run starting now and then every minute.....
         timer.schedule(hourlyTask,01,5000);
-      
+
        return  view;
 
     }
