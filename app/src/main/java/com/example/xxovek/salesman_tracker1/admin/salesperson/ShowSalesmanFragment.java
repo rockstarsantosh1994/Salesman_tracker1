@@ -260,6 +260,18 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
 
 
                 break;
+
+            case R.id.ib_view:
+                Fragment fragment1 = new ShowTrackReportFragment();
+                FragmentManager fragmentManager1 = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                Bundle data1 = new Bundle();//Use bundle to pass data
+                data1.putString("data", user_id1);
+                fragment1.setArguments(data1);
+                fragmentTransaction1.replace(R.id.main_container, fragment1);
+                fragmentTransaction1.addToBackStack(null);
+                fragmentTransaction1.commit();
+                break;
         }
 
         // Intent intent = new Intent(getContext(), Clientsinfo.class);

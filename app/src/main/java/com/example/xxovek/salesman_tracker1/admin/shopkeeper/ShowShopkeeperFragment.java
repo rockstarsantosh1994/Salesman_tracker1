@@ -1,8 +1,6 @@
 package com.example.xxovek.salesman_tracker1.admin.shopkeeper;
 
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +16,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -30,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 
+import com.example.xxovek.salesman_tracker1.admin.salesperson.ShowTrackReportFragment;
 import com.example.xxovek.salesman_tracker1.admin.tabs.ShopKeepersTab;
 import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
@@ -47,7 +45,6 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
     RecyclerView recyclerView;
     public int i;
     public MyRecyclerViewAdapter adapter;
-    Button button77;
     String n [] ;
     String a="";
     List<String> al = new ArrayList<String>();
@@ -73,7 +70,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
 
         recyclerView = view.findViewById(R.id.admin_show_recycle_id);
 
-        final String LOGIN_URL = "http://track.xxovek.com/src/display_shopkeeper";
+      // final String LOGIN_URL = "http://track.xxovek.com/src/display_shopkeeper";
 
         //Creating a string request
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_SHOPKEEPER,
@@ -263,9 +260,13 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
 
 
                 break;
+
+
+
         }
 
-        // Intent intent = new Intent(getContext(), Clientsinfo.class);
+
+                // Intent intent = new Intent(getContext(), Clientsinfo.class);
         // startActivity(intent);
 
 

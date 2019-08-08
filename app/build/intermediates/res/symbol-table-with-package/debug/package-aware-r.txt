@@ -1068,6 +1068,7 @@ drawable salesman1
 drawable textview
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable view_button
 drawable vikas
 id ALT
 id CTRL
@@ -1100,6 +1101,7 @@ id add_shop_on_routes_id
 id adjust_height
 id adjust_width
 id admin_id
+id admin_map
 id admin_show_recycle_id
 id alertTitle
 id all
@@ -1199,6 +1201,7 @@ id hybrid
 id hybrid_map
 id ib_delete
 id ib_edit
+id ib_view
 id icon
 id icon_group
 id icon_only
@@ -1232,6 +1235,7 @@ id main_container
 id map
 id masked
 id media_actions
+id menu_dashboard
 id message
 id middle
 id mini
@@ -1450,6 +1454,7 @@ layout fragment_add_route_for_shops
 layout fragment_add_routes
 layout fragment_add_salesman
 layout fragment_add_shopkeeper
+layout fragment_admin_dashboard
 layout fragment_admin_details
 layout fragment_assign_sales_man
 layout fragment_change_password

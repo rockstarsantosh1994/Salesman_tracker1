@@ -64,12 +64,12 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_delete.png.flat",
-        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-hdpi/ic_delete.png"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_manager.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_manager.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_delete.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-hdpi/ic_delete.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -100,12 +100,12 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-watch-v20_abc_dialog_material_background.xml.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-watch-v20/abc_dialog_material_background.xml"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_feedback.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-hdpi/ic_feedback.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-watch-v20_abc_dialog_material_background.xml.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-watch-v20/abc_dialog_material_background.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -120,16 +120,16 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi_delete_button.png.flat",
@@ -152,32 +152,32 @@
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/res/menu/map_options.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/color_abc_tint_default.xml.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/color/abc_tint_default.xml"
-    },
-    {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/layout/abc_dialog_title_material.xml"
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/layout/abc_list_menu_item_checkbox.xml"
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/color_abc_tint_default.xml.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_history.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_history.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_history.png.flat",
-        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_history.png"
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/color_abc_btn_colored_borderless_text_material.xml.flat",
@@ -216,6 +216,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_view_button.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-anydpi-v21/view_button.xml"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -228,12 +232,12 @@
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/res/layout/home.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxhdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -252,12 +256,12 @@
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/res/anim/fade_in.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_fragment_add_shopkeeper.xml.flat",
@@ -272,12 +276,12 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/anim/abc_tooltip_exit.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/layout/notification_template_icon_group.xml"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_account_circle_black_24dp.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_account_circle_black_24dp.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/layout/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -310,6 +314,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/anim_abc_fade_in.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi_view_button.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xhdpi/view_button.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
@@ -446,6 +454,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/layout_fragment_admin_dashboard.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/res/layout/fragment_admin_dashboard.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -916,6 +928,10 @@
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/src/main/res/drawable/rounded_image.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-mdpi_view_button.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-mdpi/view_button.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1340,6 +1356,10 @@
         "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_employee.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxhdpi_view_button.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xxhdpi/view_button.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
@@ -1426,6 +1446,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi_view_button.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-hdpi/view_button.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
@@ -2188,6 +2212,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-ldpi_view_button.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-ldpi/view_button.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
@@ -2418,6 +2446,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_view_button.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/generated/res/pngs/debug/drawable-xxxhdpi/view_button.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",

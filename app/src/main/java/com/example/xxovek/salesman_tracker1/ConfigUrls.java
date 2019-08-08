@@ -32,6 +32,8 @@ public class ConfigUrls {
     public static final String DISPLAY_ROUTE =ROOT_URL+"display_routes";
     public static final String DISPLAY_WORK_DETAILS =ROOT_URL+"display_work_details";
     public static final String DISPLAY_ROUTE_DETAILS =ROOT_URL+"display_route_details";
+    public static final String TRACK_REPORT_DATA =ROOT_URL+"TrackReportData";
+    public static final String FETCH_LIVE_TRACK_POSITION =ROOT_URL+"fetchLivetrackposition";
 
     //User URL's.................
     public static final String ADMIN_INFO = USER_URL + "admininfo";
@@ -41,4 +43,5 @@ public class ConfigUrls {
     public static final String CLIENTS_INFO = USER_URL + "clientsinfo";
     public static final String HISTORY_CLIENTS = USER_URL + "historyclients";
     public static final String DROPLATLONG = USER_URL + "droplatlong";
+
 }

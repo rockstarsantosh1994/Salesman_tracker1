@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="Dashboard">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Dashboard">
 
+                <item
+                    android:id="@+id/menu_dashboard"
+                    android:icon="@drawable/ic_employee"
+                    android:title="Dashboard">
+
+                </item>
+
+
+            </group>
+        </menu>
+    </item>
 
     <item android:title="Sales Person">
         <menu>

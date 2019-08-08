@@ -17,6 +17,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.example.xxovek.salesman_tracker1.admin.dashboard.AdminDashboard;
+import com.example.xxovek.salesman_tracker1.user.Dashboard;
 import com.example.xxovek.salesman_tracker1.user.MainActivity;
 import com.example.xxovek.salesman_tracker1.R;
 import com.example.xxovek.salesman_tracker1.user.TodaysVisitsFragment;
@@ -79,10 +82,10 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.main_container, new UserProfileFragment());
+        fragmentTransaction.add(R.id.main_container, new AdminDashboard());
         fragmentTransaction.commit();
         signout.setVisibility(View.INVISIBLE);
-        getSupportActionBar().setTitle("ADMIN PROFILE");
+        getSupportActionBar().setTitle("DASHBOARD");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#004D40")));
 
 
@@ -92,6 +95,17 @@ public class AdminHomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int newfrag = item.getItemId();
                 switch (newfrag) {
+
+                    case R.id.menu_dashboard:
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.main_container, new AdminDashboard());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle("DASHBOARD");
+                        drawerLayout.closeDrawers();
+                        item.setChecked(true);
+                        signout.setVisibility(View.INVISIBLE);
+                        break;
+
                     case R.id.sales_person_id:
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.main_container, new SalesPersonFragmentTab());
