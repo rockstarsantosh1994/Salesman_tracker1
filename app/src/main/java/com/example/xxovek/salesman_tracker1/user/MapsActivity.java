@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -397,7 +398,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         @Override
         protected String doInBackground(String... params) {
-            String countries_url = "http://track.xxovek.com/public_html/salesandroid/droplatlong";
+         //   String countries_url = "http://track.xxovek.com/public_html/salesandroid/droplatlong";
 
             try {
                 String uid = params[0];
@@ -408,7 +409,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
 
-                URL url = new URL(countries_url);
+                URL url = new URL(ConfigUrls.DROPLATLONG);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);

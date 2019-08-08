@@ -1018,6 +1018,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable delete_button
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1027,6 +1028,7 @@ drawable design_snackbar_background
 drawable download
 drawable download1
 drawable download2
+drawable edit_button
 drawable et_bg
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1195,6 +1197,8 @@ id home
 id homeAsUp
 id hybrid
 id hybrid_map
+id ib_delete
+id ib_edit
 id icon
 id icon_group
 id icon_only
@@ -1208,7 +1212,6 @@ id idTopLayout
 id idTopLayout1
 id ifRoom
 id image
-id imageButton
 id imageView
 id imageViewa
 id info

@@ -5,47 +5,34 @@
     build-mode="COLD"
     density="xhdpi"
     format="10"
-    ir-eligibility="FIELD_REMOVED"
     plugin-version="3.4.2"
-    timestamp="1565074330610"
+    timestamp="1565242516830"
     token="-1855632611555452709"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2905" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="182" />
+        duration="0" />
     <task
         name="verifier"
-        duration="87" />
+        duration="0" />
 
     <artifact
-        location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
+        location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1565073512317"
+        timestamp="1565240847887"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
@@ -57,8 +44,8 @@
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
@@ -66,7 +53,13 @@
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -74,27 +67,59 @@
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
-        <artifact
-            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_REMOVED"
-        timestamp="1565074330610"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1565241715591"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1565242124565"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
             location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
+        <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_REMOVED"
+        timestamp="1565242285284"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1565242516830"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/xxovek/AndroidStudioProjects/Salesman_tracker1/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

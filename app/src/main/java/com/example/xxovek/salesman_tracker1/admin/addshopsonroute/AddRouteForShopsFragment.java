@@ -104,7 +104,7 @@ public class AddRouteForShopsFragment extends Fragment {
                     public void onResponse(String response) {
 
 
-                        Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "Response\n\n"+response, //.LENGTH_SHORT).show();
                         Log.d("mytag", "ADD_ROUTE_DETAILS onResponse: "+response);
 
                         Fragment fragment = new AddShopOnRoutesTab();
@@ -118,7 +118,7 @@ public class AddRouteForShopsFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), error.getMessage(), //.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -148,7 +148,7 @@ public class AddRouteForShopsFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(AddRouteForShopsFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(AddRouteForShopsFragment.this.getContext(), "No Shops"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
@@ -161,8 +161,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                     rid = json.getString("rid");
                                     sid = json.getString("sid");
                                     Log.d("mytag", "onResponse: rid "+rid+"\nsid"+sid);
-                                    spin_route.setSelection(Integer.parseInt(rid));
-                                    spin_shop.setSelection(Integer.parseInt(sid));
+
                             }catch (JSONException e){e.printStackTrace();}
                             catch(IndexOutOfBoundsException e){e.printStackTrace();}
 
@@ -200,13 +199,13 @@ public class AddRouteForShopsFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Unable to fetch size data"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "Unable to fetch size data"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                Toast.makeText(getContext(), "getSizeValue Response \n\n\n"+response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), "getSizeValue Response \n\n\n"+response.toString(), //.LENGTH_SHORT).show();
 
 
                                 List<String> al1 = new ArrayList<String>();
@@ -217,7 +216,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -231,7 +230,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 spinnerArray = new String[al1.size()];
                                 routeId_hashmap = new HashMap<Integer, String>();
 
-                                // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), "the size is" + a2.toString(), //.LENGTH_SHORT).show();
 
 
                                 for (int i = 0; i <al1.size(); i++)
@@ -247,6 +246,15 @@ public class AddRouteForShopsFragment extends Fragment {
                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
                                 spin_route.setAdapter(dataAdapter);
 
+
+                                /*try{
+                                    if(!rid.equals(null)){
+                                        Log.d("mytag", "onResponse: rid"+rid);
+                                        int rid1=Integer.parseInt(rid)-1;
+                                        spin_route.setSelection(rid1);
+                                    }
+                                }catch(NullPointerException e){e.printStackTrace();}
+*/
                                 spin_route.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -255,7 +263,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                         st_route_id = (String) routeId_hashmap.get(spin_route.getSelectedItemPosition());
 
 
-                                        Toast.makeText(getContext(), "RouteId Value"+st_route_id, Toast.LENGTH_SHORT).show();
+                                        //.makeText(getContext(), "RouteId Value"+st_route_id, //.LENGTH_SHORT).show();
                                     }
 
                                     @Override
@@ -264,7 +272,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                     }
                                 });
 
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    //.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
                                 String result1 = response.replace("\"", "");
@@ -312,13 +320,13 @@ public class AddRouteForShopsFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Unable to fetch size data"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "Unable to fetch size data"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                Toast.makeText(getContext(), "getShops Value Response \n\n\n"+response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), "getShops Value Response \n\n\n"+response.toString(), //.LENGTH_SHORT).show();
 
 
                                 List<String> al1 = new ArrayList<String>();
@@ -329,7 +337,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -343,7 +351,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                 spinnerArray1 = new String[al1.size()];
                                 shopkeeperId_hashmap = new HashMap<Integer, String>();
 
-                                // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), "the size is" + a2.toString(), //.LENGTH_SHORT).show();
 
 
                                 for (int i = 0; i <al1.size(); i++)
@@ -359,6 +367,16 @@ public class AddRouteForShopsFragment extends Fragment {
                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
                                 spin_shop.setAdapter(dataAdapter);
 
+
+                              /*  try{
+                                    Log.d("mytag", "onResponse: sid"+sid);
+                                    if(!sid.equals(null)){
+                                        int sid1=Integer.parseInt(sid)-1;
+                                        spin_shop.setSelection(sid1);
+                                    }
+                                }catch(NullPointerException e){e.printStackTrace();}
+*/
+
                                 spin_shop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -367,7 +385,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                         st_shopkeeper_id = (String) shopkeeperId_hashmap.get(spin_shop.getSelectedItemPosition());
 
 
-                                        Toast.makeText(getContext(), "ShopKeeperId Value"+st_shopkeeper_id, Toast.LENGTH_SHORT).show();
+                                        //.makeText(getContext(), "ShopKeeperId Value"+st_shopkeeper_id, //.LENGTH_SHORT).show();
                                     }
 
                                     @Override
@@ -376,7 +394,7 @@ public class AddRouteForShopsFragment extends Fragment {
                                     }
                                 });
 
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    //.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
                                 String result1 = response.replace("\"", "");

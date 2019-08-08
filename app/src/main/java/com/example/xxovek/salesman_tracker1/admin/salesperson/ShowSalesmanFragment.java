@@ -27,8 +27,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
-import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.AddRouteForShopsFragment;
-import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
 import com.example.xxovek.salesman_tracker1.admin.tabs.SalesPersonFragmentTab;
 import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
@@ -73,7 +71,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
         recyclerView = view.findViewById(R.id.admin_show_recycle_id);
 
 
-        final String LOGIN_URL = "http://track.xxovek.com/src/display_salesman";
+      //  final String LOGIN_URL = "http://track.xxovek.com/src/display_salesman";
 
         //Creating a string request
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_SALESMAN,
@@ -83,7 +81,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(ShowSalesmanFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(ShowSalesmanFragment.this.getContext(), "No Shops"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
@@ -93,23 +91,23 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
 
                                 json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), response.toString(), //.LENGTH_SHORT).show();
 
                                 for(int i=0; i<json_data.length();i++){
                                     JSONObject json = json_data.getJSONObject(i);
                                     al1.add((json.getString("Emp_id")));
-                                    al2.add("".concat(json.getString("fullname")));
-                                    al3.add("".concat(json.getString("email")));
-                                    al4.add("".concat(json.getString("mobile")));
-                                    al5.add("".concat(json.getString("status")));
-                                    al6.add("".concat(json.getString("address")));
+                                    al2.add("Name: ".concat(json.getString("fullname")));
+                                    al3.add("Email: ".concat(json.getString("email")));
+                                    al4.add("Mobile: ".concat(json.getString("mobile")));
+                                    al5.add("Status: ".concat(json.getString("status")));
+                                    al6.add("Add: ".concat(json.getString("address")));
                                    // st_assignid =(json.getString("status"));
 
 
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
-//                    //Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    ////.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
 
@@ -117,8 +115,8 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");
 
-                                Toast.makeText(getContext(), al.toString(), Toast.LENGTH_SHORT).show();
-                                Toast.makeText(getContext(), al2.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), al.toString(), //.LENGTH_SHORT).show();
+                                //.makeText(getContext(), al2.toString(), //.LENGTH_SHORT).show();
 
                                 //al = Arrays.asList(n);
 
@@ -127,7 +125,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                                 recyclerView.setLayoutManager(mLayoutManager);
 
                                 recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                adapter = new MyRecyclerViewAdapter(getContext(), al1,al2,al3,al4,al5,al6,al3,al2,al1,al1,"3");
+                                adapter = new MyRecyclerViewAdapter(getContext(), al1,al2,al3,al4,al5,al6,al3,al2,al1,al1,"4");
                                 adapter.setClickListener(ShowSalesmanFragment.this);
                                 recyclerView.setAdapter(adapter);
                                 recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -170,11 +168,11 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
 
         int id=view.getId();
         String user_id1 = adapter.getItem(position);
-        // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
+        // //.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, //.LENGTH_SHORT).show();
+        //.makeText(getContext(), "On Item Clicked"+id, //.LENGTH_SHORT).show();
 
         switch (id){
-            case R.id.t2:Fragment fragment = new AddSalesmanFragment();
+            case R.id.ib_edit:Fragment fragment = new AddSalesmanFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
@@ -185,7 +183,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                 fragmentTransaction.commit();
                 break;
 
-            case R.id.imageButton: final String st_delid= adapter.getItem(position);
+            case R.id.ib_delete: final String st_delid= adapter.getItem(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setIcon(android.R.drawable.ic_lock_power_off);
                 builder.setTitle("Delete");
@@ -194,7 +192,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        Toast.makeText(getContext(), "st_delid\n"+st_delid, Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "st_delid\n"+st_delid, //.LENGTH_SHORT).show();
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.REMOVE_DETAILS,
                                 new Response.Listener<String>() {
                                     @Override
@@ -202,11 +200,11 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                                         //If we are getting success from server
                                         if(TextUtils.isEmpty(response)){
                                             //Creating a shared preference
-                                            Toast.makeText(getContext(), "Unable to delete product data"+response.toString(), Toast.LENGTH_LONG).show();
+                                            //.makeText(getContext(), "Unable to delete product data"+response.toString(), //.LENGTH_LONG).show();
 
                                         }else{
 
-                                            Toast.makeText(getContext(), "Customer Deleted Successfully"+response, Toast.LENGTH_SHORT).show();
+                                            //.makeText(getContext(), "Customer Deleted Successfully"+response, //.LENGTH_SHORT).show();
                                             Log.d("mytag", "onResponse:REMOVE_DETAILS "+response);
                                             Fragment fragment = new SalesPersonFragmentTab();
                                             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -253,7 +251,7 @@ public class ShowSalesmanFragment extends Fragment implements MyRecyclerViewAdap
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getContext(), "Delete Operation Cancelled", Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "Delete Operation Cancelled", //.LENGTH_SHORT).show();
                     }
                 });
 

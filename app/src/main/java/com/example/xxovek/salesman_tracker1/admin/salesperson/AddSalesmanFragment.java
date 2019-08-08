@@ -59,11 +59,12 @@ public class AddSalesmanFragment extends Fragment {
     public Spinner  spin_gender,spin_personstatus,spin_country,spin_state,spin_city;
     public Button btn_add,btn_reset;
     public CheckBox cb_bankdetails,cb_sameasabove;
-    public String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name,st_gender,st_personstatus,st_saleinfo="",fetch_st_state="",fetch_st_city="";
+    public String admin_id,st_country_id,st_state_id,st_city_id,address,st_state_name,st_gender,st_personstatus,st_saleinfo="",fetch_st_state,fetch_st_city;
     HashMap<Integer, String> spinnerMap3,spinnerMap4;
     private int mYear, mMonth, mDay;
     public int state,city;
     DatePickerDialog datePickerDialog;
+    public static final String TAG="mytag";
 
 
 
@@ -247,7 +248,7 @@ public class AddSalesmanFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(AddSalesmanFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(AddSalesmanFragment.this.getContext(), "No Shops"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
@@ -299,18 +300,8 @@ public class AddSalesmanFragment extends Fragment {
                                     et_branch.setVisibility(View.GONE);
                                 }
                                 String st_country=json.getString("ecountry");
-                                try {
-                                    fetch_st_state = json.getString("state_id");
-                                    Log.d("mytag", "onResponse:fetch_st_state" + fetch_st_state);
-                                    state = Integer.parseInt(fetch_st_state) - 1;
-                                    Log.d("mytag", "onResponse:state" + state);
-
-                                    fetch_st_city = json.getString("city_id");
-                                    Log.d("mytag", "onResponse:fetch_st_city" + fetch_st_city);
-                                    city = Integer.parseInt(fetch_st_city) - 1;
-                                    Log.d("mytag", "onResponse:city" + city);
-                                }catch (NullPointerException e){e.printStackTrace();}
-                                catch (NumberFormatException e){e.printStackTrace();}
+                                fetch_st_state=json.getString("state_id");
+                               fetch_st_city=json.getString("city_id");
                                 et_zipcode.setText(json.getString("epincode"));
                                 et_permanantadd.setText(json.getString("eaddress"));
                                 et_residentialadd.setText(json.getString("eaddress1"));
@@ -361,7 +352,7 @@ public class AddSalesmanFragment extends Fragment {
                     public void onResponse(String response) {
 
 
-                        Toast.makeText(getContext(), "ADD_SALES_REGISTRATION onResponse\n\n"+response, Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "ADD_SALES_REGISTRATION onResponse\n\n"+response, //.LENGTH_SHORT).show();
                         Log.d("mytag", "ADD_SALES_REGISTRATION onResponse: "+response);
 
                         Fragment fragment = new SalesPersonFragmentTab();
@@ -375,7 +366,7 @@ public class AddSalesmanFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), error.getMessage(), //.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -438,7 +429,7 @@ public class AddSalesmanFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
                 st_gender = spin_gender.getItemAtPosition(i).toString();
                 if (!st_gender .isEmpty()) {
-                    Toast.makeText(getContext(), "Gender\n" + st_gender, Toast.LENGTH_SHORT).show();
+                    //.makeText(getContext(), "Gender\n" + st_gender, //.LENGTH_SHORT).show();
                 }
             }
 
@@ -466,7 +457,7 @@ public class AddSalesmanFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
                 st_personstatus = spin_personstatus.getItemAtPosition(i).toString();
                 if (!st_personstatus .isEmpty()) {
-                    Toast.makeText(getContext(), "st_personstatus\n" + st_personstatus, Toast.LENGTH_SHORT).show();
+                    //.makeText(getContext(), "st_personstatus\n" + st_personstatus, //.LENGTH_SHORT).show();
                 }
             }
 
@@ -488,13 +479,13 @@ public class AddSalesmanFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Country"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "Country"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                               // Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                               // //.makeText(getContext(), "111"+response.toString(), //.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
                                 List<String> al2 = new ArrayList<String>();
@@ -504,7 +495,7 @@ public class AddSalesmanFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -544,7 +535,7 @@ public class AddSalesmanFragment extends Fragment {
                                                 /*billing_country_id = spinnerMap1.get(sp_countrybill.getSelectedItemPosition());
                                                  */
 
-                                                Toast.makeText(getContext(), "Country id\n" + st_country_id, Toast.LENGTH_SHORT).show();
+                                                //.makeText(getContext(), "Country id\n" + st_country_id, //.LENGTH_SHORT).show();
 
                                                 //Getting State Spinner....
                                                 getStateSpin();
@@ -563,7 +554,7 @@ public class AddSalesmanFragment extends Fragment {
 
                                 // a= a + "Age : "+json.getString("c_phone")+"\n";
                                 //j= j + "Job : "+json.getString("Job")+"\n
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    //.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
                                 String result1 = response.replace("\"", "");
@@ -610,13 +601,13 @@ public class AddSalesmanFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "State"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "State"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                //Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                ////.makeText(getContext(), "111"+response.toString(), //.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
                                 List<String> al2 = new ArrayList<String>();
@@ -625,7 +616,7 @@ public class AddSalesmanFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -656,9 +647,7 @@ public class AddSalesmanFragment extends Fragment {
                                     countrys2.setSelection(spinnerPosition1);
 */
 
-                                 /*  if(fetch_st_state.equals("")){
-                                       spin_state.setSelection(state);
-                                   }*/
+
 
                                     spin_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
@@ -670,7 +659,7 @@ public class AddSalesmanFragment extends Fragment {
                                             //getting City
                                             getCitySpin();
 
-                                            Toast.makeText(getContext(), "State Id\n" + st_state_id, Toast.LENGTH_SHORT).show();
+                                            //.makeText(getContext(), "State Id\n" + st_state_id, //.LENGTH_SHORT).show();
 
 
                                         }
@@ -681,10 +670,23 @@ public class AddSalesmanFragment extends Fragment {
                                     });
                                 }
 
+                                Log.d(TAG, "onResponse: fetch_st_state "+fetch_st_state);
+                                try {
+                                    if(!fetch_st_state.equals("")) {
+                                        int state1 = Integer.parseInt(fetch_st_state);
+                                        Log.d("mytag", "onResponse:state1 "+fetch_st_state);
+                                        int state = state1 - 2;
+                                        spin_state.setSelection(state);
+                                    }
+                                }
+                                catch (NullPointerException e){e.printStackTrace();}
+                                catch (NumberFormatException e){e.printStackTrace();}
+                                catch (ArrayIndexOutOfBoundsException e){e.printStackTrace();}
+
 
                                 // a= a + "Age : "+json.getString("c_phone")+"\n";
                                 //j= j + "Job : "+json.getString("Job")+"\n
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    //.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
                                 String result1 = response.replace("\"", "");
@@ -725,125 +727,6 @@ public class AddSalesmanFragment extends Fragment {
 
     }
 
-    //Setting States to Spinner When Updateing the record....
-    public void fetchStateById(){
-        StringRequest stringRequest3 = new StringRequest(Request.Method.POST, ConfigUrls.GET_STATES_BY_ID,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        //If we are getting success from server
-                        if(TextUtils.isEmpty(response)){
-                            //Creating a shared preference
-                            Toast.makeText(getContext(), "State"+response.toString(), Toast.LENGTH_LONG).show();
-
-                        }else{
-
-                            try {
-
-                                //Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
-
-                                List<String> al1 = new ArrayList<String>();
-                                List<String> al2 = new ArrayList<String>();
-                                List<String> al3 = new ArrayList<String>();
-
-                                JSONArray json_data = new JSONArray(response);
-                                int len = json_data.length();
-                                String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
-
-                                for (int i = 0; i < json_data.length(); i++) {
-                                    JSONObject json = json_data.getJSONObject(i);
-                                    al1.add(json.getString("id"));
-                                    al2.add(json.getString("name"));
-
-                                    //al4.add(json.getString("phonecode"));
-//
-
-                                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(),
-                                            android.R.layout.simple_spinner_dropdown_item, al2);
-
-                                    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                    spin_state.setAdapter(dataAdapter);
-                                    String[] spinnerStateArray1 = new String[al1.size()];
-                                    spinnerMap4 = new HashMap<Integer, String>();
-
-                                    for (i = 0; i < al1.size(); i++) {
-                                        spinnerMap4.put(i, al1.get(i));
-                                        spinnerStateArray1[i] = al1.get(i);
-                                    }
-                                          /* int spinnerPosition = dataAdapter.getPosition(a10);
-                                    sp_countrybill.setSelection(spinnerPosition);*/
-
-                                   /* dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                    countrys2.setAdapter(dataAdapter);
-                                    int spinnerPosition1 = dataAdapter.getPosition(a13);
-                                    countrys2.setSelection(spinnerPosition1);
-*/
-                                    spin_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                        @Override
-                                        public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
-                                            st_state_name = spin_state.getItemAtPosition(i).toString();
-
-                                            st_state_id= spinnerMap4.get(spin_state.getSelectedItemPosition());
-
-                                            //getting City
-                                            getCitySpin();
-
-                                            Toast.makeText(getContext(), "State Id\n" + st_state_id, Toast.LENGTH_SHORT).show();
-
-
-                                        }
-                                        @Override
-                                        public void onNothingSelected(AdapterView<?> parent) {
-
-                                        }
-                                    });
-                                }
-
-
-                                // a= a + "Age : "+json.getString("c_phone")+"\n";
-                                //j= j + "Job : "+json.getString("Job")+"\n
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
-
-
-                                String result1 = response.replace("\"", "");
-                                result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
-                                String str[] = result1.split(",");
-
-
-                                //al = Arrays.asList(n);
-
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            catch(NullPointerException e){e.printStackTrace();}
-
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //You can handle error here if you want
-                    }
-                }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                //Adding parameters to request
-                params.put("id", fetch_st_state);
-//                params.put("password", password);
-
-                //returning parameter
-                return params;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(stringRequest3);
-
-    }
-
     public void getCitySpin(){
         StringRequest stringRequest7 = new StringRequest(Request.Method.POST, ConfigUrls.CITY_URL,
                 new Response.Listener<String>() {
@@ -852,28 +735,28 @@ public class AddSalesmanFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "City"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "City"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                //Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                ////.makeText(getContext(), "111"+response.toString(), //.LENGTH_SHORT).show();
 //
-                                List<String> al1 = new ArrayList<String>();
-                                List<String> al2 = new ArrayList<String>();
-                                List<String> al3 = new ArrayList<String>();
+                                List<String> bl1 = new ArrayList<String>();
+                                List<String> bl2 = new ArrayList<String>();
+                                List<String> bl3 = new ArrayList<String>();
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
-                                    al1.add(json.getString("id"));
-                                    al2.add(json.getString("name"));
-                                    al3.add(json.getString("name"));
+                                    bl1.add(json.getString("id"));
+                                    bl2.add(json.getString("name"));
+                                    bl3.add(json.getString("name"));
                                     //al4.add(json.getString("phonecode"));
 //
 
@@ -881,7 +764,7 @@ public class AddSalesmanFragment extends Fragment {
 
                                     //For Shipping City Spinner
                                     ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(getContext(),
-                                            android.R.layout.simple_spinner_dropdown_item, al2);
+                                            android.R.layout.simple_spinner_dropdown_item, bl2);
 
                                     cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                                     spin_city.setAdapter(cityAdapter);
@@ -896,6 +779,8 @@ public class AddSalesmanFragment extends Fragment {
                                    // if(fetch_st_city.equals("")){
                                        // spin_state.setSelection(2724);
                                    // }
+
+
                                     spin_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
@@ -904,7 +789,7 @@ public class AddSalesmanFragment extends Fragment {
                                                 //shipping_city_id = spinnerMap6.get(sp_cityship.getSelectedItemPosition());
 
 
-                                                Toast.makeText(getContext(), "Shipping City id\n" + st_city_id, Toast.LENGTH_SHORT).show();
+                                                //.makeText(getContext(), "Shipping City id\n" + st_city_id, //.LENGTH_SHORT).show();
 
 
 
@@ -919,6 +804,19 @@ public class AddSalesmanFragment extends Fragment {
                                         }
                                     });
                                 }
+                             /*   Log.d(TAG, "onResponse: fetch_st_city "+fetch_st_city);
+                                try {
+                                    if(!fetch_st_city.equals("")) {
+                                        int city1 = Integer.parseInt(fetch_st_city);
+                                        Log.d("mytag", "onResponse:city1 "+fetch_st_city);
+                                        int city = city1 - 1;
+                                        spin_city.setSelection(city);
+                                    }
+                                }
+                                catch (NullPointerException e){e.printStackTrace();}
+                                catch (NumberFormatException e){e.printStackTrace();}
+                                catch (ArrayIndexOutOfBoundsException e){e.printStackTrace();}*/
+
                                 String result1 = response.replace("\"", "");
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");

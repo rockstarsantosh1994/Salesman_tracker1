@@ -50,7 +50,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.recycler_row_show, parent, false);
+        View view = mInflater.inflate(R.layout.recyclerview_row, parent, false);
 
         return new ViewHolder(view);
     }
@@ -92,6 +92,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         }else if(flag.equals("2")) {
             holder.myTextView1.setVisibility(View.GONE);
+            holder.myTextView4.setVisibility(View.GONE);
+            holder.myTextView5.setVisibility(View.GONE);
             holder.myTextView6.setVisibility(View.GONE);
             holder.myTextView7.setVisibility(View.GONE);
             holder.myTextView8.setVisibility(View.GONE);
@@ -100,6 +102,17 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         }else if(flag.equals("3")) {
            
+            holder.myTextView1.setVisibility(View.GONE);
+            holder.myTextView5.setVisibility(View.GONE);
+            holder.myTextView6.setVisibility(View.GONE);
+            holder.myTextView7.setVisibility(View.GONE);
+            holder.myTextView8.setVisibility(View.GONE);
+            holder.myTextView9.setVisibility(View.GONE);
+            holder.myTextView10.setVisibility(View.GONE);
+
+        }
+        else if(flag.equals("4")) {
+
             holder.myTextView1.setVisibility(View.GONE);
             holder.myTextView7.setVisibility(View.GONE);
             holder.myTextView8.setVisibility(View.GONE);
@@ -121,7 +134,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView myTextView1,myTextView2,myTextView3,myTextView4,myTextView5,myTextView6,myTextView7,myTextView8,myTextView9,myTextView10;
-        public ImageButton mybutton;
+        public ImageButton ib_delete,ib_edit;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -135,6 +148,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             myTextView8 = itemView.findViewById(R.id.t8);
             myTextView9 = itemView.findViewById(R.id.t9);
             myTextView10 = itemView.findViewById(R.id.t10);
+            ib_delete = itemView.findViewById(R.id.ib_delete);
+            ib_edit = itemView.findViewById(R.id.ib_edit);
+            myTextView10 = itemView.findViewById(R.id.t10);
             //mybutton = itemView.findViewById(R.id.imageButton);
             myTextView1.setVisibility(View.INVISIBLE);
 
@@ -144,6 +160,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             myTextView2.setOnClickListener(this);
             myTextView3.setOnClickListener(this);
             myTextView4.setOnClickListener(this);
+            ib_delete.setOnClickListener(this);
+            ib_edit.setOnClickListener(this);
 
         }
 

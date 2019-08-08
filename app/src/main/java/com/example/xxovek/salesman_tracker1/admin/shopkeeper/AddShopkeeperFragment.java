@@ -177,7 +177,7 @@ public class AddShopkeeperFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(AddShopkeeperFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(AddShopkeeperFragment.this.getContext(), "No Shops"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
@@ -243,7 +243,7 @@ public class AddShopkeeperFragment extends Fragment {
                     public void onResponse(String response) {
 
 
-                        Toast.makeText(getContext(), "ADD_SHOP_KEEPER_REGISTRATION onResponse\n\n"+response, Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "ADD_SHOP_KEEPER_REGISTRATION onResponse\n\n"+response, //.LENGTH_SHORT).show();
                         Log.d("mytag", "ADD_SHOP_KEEPER_REGISTRATION onResponse: "+response);
 
                         Fragment fragment = new ShopKeepersTab();
@@ -257,7 +257,7 @@ public class AddShopkeeperFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), error.getMessage(), //.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -308,13 +308,13 @@ public class AddShopkeeperFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Country"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "Country"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), "111"+response.toString(), //.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
                                 List<String> al2 = new ArrayList<String>();
@@ -324,7 +324,7 @@ public class AddShopkeeperFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -364,7 +364,7 @@ public class AddShopkeeperFragment extends Fragment {
                                                 /*billing_country_id = spinnerMap1.get(sp_countrybill.getSelectedItemPosition());
                                                  */
 
-                                                Toast.makeText(getContext(), "Country id\n" + st_country_id, Toast.LENGTH_SHORT).show();
+                                                //.makeText(getContext(), "Country id\n" + st_country_id, //.LENGTH_SHORT).show();
 
                                                 //Getting State Spinner....
                                                 getStateSpin();
@@ -383,7 +383,7 @@ public class AddShopkeeperFragment extends Fragment {
 
                                 // a= a + "Age : "+json.getString("c_phone")+"\n";
                                 //j= j + "Job : "+json.getString("Job")+"\n
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    //.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
                                 String result1 = response.replace("\"", "");
@@ -430,13 +430,13 @@ public class AddShopkeeperFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "State"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "State"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), "111"+response.toString(), //.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
                                 List<String> al2 = new ArrayList<String>();
@@ -445,7 +445,7 @@ public class AddShopkeeperFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -485,7 +485,7 @@ public class AddShopkeeperFragment extends Fragment {
                                                 //getting City
                                                 getCitySpin();
 
-                                                Toast.makeText(getContext(), "State Id\n" + st_state_id, Toast.LENGTH_SHORT).show();
+                                                //.makeText(getContext(), "State Id\n" + st_state_id, //.LENGTH_SHORT).show();
 
 
                                         }
@@ -499,7 +499,7 @@ public class AddShopkeeperFragment extends Fragment {
 
                                 // a= a + "Age : "+json.getString("c_phone")+"\n";
                                 //j= j + "Job : "+json.getString("Job")+"\n
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    //.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
                                 String result1 = response.replace("\"", "");
@@ -547,13 +547,13 @@ public class AddShopkeeperFragment extends Fragment {
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "City"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(getContext(), "City"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
                             try {
 
-                                Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), "111"+response.toString(), //.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
                                 List<String> al2 = new ArrayList<String>();
@@ -562,7 +562,7 @@ public class AddShopkeeperFragment extends Fragment {
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
-                                // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -597,7 +597,7 @@ public class AddShopkeeperFragment extends Fragment {
                                                 //shipping_city_id = spinnerMap6.get(sp_cityship.getSelectedItemPosition());
 
 
-                                                Toast.makeText(getContext(), "Shipping City id\n" + st_city_id, Toast.LENGTH_SHORT).show();
+                                                //.makeText(getContext(), "Shipping City id\n" + st_city_id, //.LENGTH_SHORT).show();
 
 
 

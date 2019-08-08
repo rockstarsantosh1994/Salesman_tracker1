@@ -80,7 +80,7 @@ public class AddRoutesFragment extends Fragment {
                             public void onResponse(String response) {
 
 
-                                Toast.makeText(getContext(), "Response\n\n"+response, Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), "Response\n\n"+response, //.LENGTH_SHORT).show();
                                 Log.d("mytag", "ADD_ROUTE onResponse: "+response);
                                 //converting response to json object
                                 // JSONObject obj = new JSONObject(response);
@@ -100,7 +100,7 @@ public class AddRoutesFragment extends Fragment {
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), error.getMessage(), //.LENGTH_SHORT).show();
                             }
                         }) {
                     @Override

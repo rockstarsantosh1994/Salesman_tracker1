@@ -18,7 +18,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -30,9 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.salesman_tracker1.ConfigUrls;
 import com.example.xxovek.salesman_tracker1.R;
-import com.example.xxovek.salesman_tracker1.admin.addshopsonroute.AddRouteForShopsFragment;
-import com.example.xxovek.salesman_tracker1.admin.salesperson.ShowSalesmanFragment;
-import com.example.xxovek.salesman_tracker1.admin.tabs.AddShopOnRoutesTab;
+
 import com.example.xxovek.salesman_tracker1.admin.tabs.ShopKeepersTab;
 import com.example.xxovek.salesman_tracker1.user.MyRecyclerViewAdapter;
 
@@ -86,7 +83,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(ShowShopkeeperFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(ShowShopkeeperFragment.this.getContext(), "No Shops"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
@@ -96,7 +93,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
 
                                 json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), response.toString(), //.LENGTH_SHORT).show();
 
                                 for(int i=0; i<json_data.length();i++){
                                     JSONObject json = json_data.getJSONObject(i);
@@ -104,15 +101,15 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                                     al2.add("Contact Person : ".concat(json.getString("fullname").toUpperCase()));
                                     al3.add("Email : ".concat(json.getString("email")));
                                     al4.add("Mobile : ".concat(json.getString("mobile")));
-                                    al5.add("city : ".concat(json.getString("city")));
-                                    al6.add("Address : ".concat(json.getString("address")));
+                                    al5.add("City : ".concat(json.getString("city")));
+                                    al6.add("Address  : ".concat(json.getString("address")));
 
 
 
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
-//                    //Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    ////.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
 
@@ -120,8 +117,8 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");
 
-                                Toast.makeText(getContext(), al1.toString(), Toast.LENGTH_SHORT).show();
-                                Toast.makeText(getContext(), al2.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), al1.toString(), //.LENGTH_SHORT).show();
+                                //.makeText(getContext(), al2.toString(), //.LENGTH_SHORT).show();
 
                                 //al = Arrays.asList(n);
 
@@ -130,7 +127,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                                 recyclerView.setLayoutManager(mLayoutManager);
 
                                 recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                adapter = new MyRecyclerViewAdapter(getContext(), al1,al2,al3,al4,al5,al6,al2,al1,al1,al1,"3");
+                                adapter = new MyRecyclerViewAdapter(getContext(), al1,al2,al3,al4,al5,al6,al2,al1,al1,al1,"4");
                                 adapter.setClickListener(ShowShopkeeperFragment.this);
                                 recyclerView.setAdapter(adapter);
                                 recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -174,11 +171,11 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
 
         int id=view.getId();
         String user_id1 = adapter.getItem(position);
-        // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
+        // //.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, //.LENGTH_SHORT).show();
+        //.makeText(getContext(), "On Item Clicked"+id, //.LENGTH_SHORT).show();
 
         switch (id){
-            case R.id.t2:Fragment fragment = new AddShopkeeperFragment();
+            case R.id.ib_edit:Fragment fragment = new AddShopkeeperFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
@@ -189,16 +186,16 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                 fragmentTransaction.commit();
                 break;
 
-            case R.id.imageButton: final String st_delid= adapter.getItem(position);
+            case R.id.ib_delete: final String st_delid= adapter.getItem(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setIcon(android.R.drawable.ic_lock_power_off);
-                builder.setTitle("Delete");
+                builder.setTitle("");
                 builder.setMessage("Do you really want to delete?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        Toast.makeText(getContext(), "st_delid\n"+st_delid, Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "st_delid\n"+st_delid, //.LENGTH_SHORT).show();
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.REMOVE_DETAILS,
                                 new Response.Listener<String>() {
                                     @Override
@@ -206,11 +203,11 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                                         //If we are getting success from server
                                         if(TextUtils.isEmpty(response)){
                                             //Creating a shared preference
-                                            Toast.makeText(getContext(), "Unable to delete product data"+response.toString(), Toast.LENGTH_LONG).show();
+                                            //.makeText(getContext(), "Unable to delete product data"+response.toString(), //.LENGTH_LONG).show();
 
                                         }else{
 
-                                            Toast.makeText(getContext(), "Customer Deleted Successfully"+response, Toast.LENGTH_SHORT).show();
+                                            //.makeText(getContext(), "Customer Deleted Successfully"+response, //.LENGTH_SHORT).show();
                                             Log.d("mytag", "onResponse:REMOVE_DETAILS "+response);
                                             Fragment fragment = new ShopKeepersTab();
                                             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -257,7 +254,7 @@ public class ShowShopkeeperFragment extends Fragment implements MyRecyclerViewAd
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getContext(), "Delete Operation Cancelled", Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "Delete Operation Cancelled", //.LENGTH_SHORT).show();
                     }
                 });
 

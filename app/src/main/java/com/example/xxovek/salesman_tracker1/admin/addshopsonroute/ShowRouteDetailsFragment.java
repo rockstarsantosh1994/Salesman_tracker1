@@ -72,7 +72,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
 
         recyclerView = view.findViewById(R.id.admin_show_recycle_id);
 
-        final String LOGIN_URL = "http://track.xxovek.com/src/display_route_details";
+        //final String LOGIN_URL = "http://track.xxovek.com/src/display_route_details";
 
         //Creating a string request
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.DISPLAY_ROUTE_DETAILS,
@@ -82,7 +82,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                         //If we are getting success from server
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
-                            Toast.makeText(ShowRouteDetailsFragment.this.getContext(), "No Shops"+response.toString(), Toast.LENGTH_LONG).show();
+                            //.makeText(ShowRouteDetailsFragment.this.getContext(), "No Shops"+response.toString(), //.LENGTH_LONG).show();
 
                         }else{
 
@@ -92,7 +92,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
 
                                 json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                //Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
+                                ////.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
 
                                 for(int i=0; i<json_data.length();i++){
                                     JSONObject json = json_data.getJSONObject(i);
@@ -100,14 +100,14 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                                     al2.add("RouteId : ".concat(json.getString("RouteId")));
                                     al3.add("Route : ".concat(json.getString("route")));
                                     al4.add("Shopk Id : ".concat(json.getString("shopkid")));
-                                    al5.add("Name: ".concat(json.getString("sname")));
+                                    al5.add("Shopkeeper Name: ".concat(json.getString("sname")));
                                     al6.add("Phone : ".concat(json.getString("sphone")));
 
 
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
-//                    //Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                    ////.makeText(getContext(), n.toString(), //.LENGTH_SHORT).show();
 
 
 
@@ -115,8 +115,8 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");
 
-                                Toast.makeText(getContext(), al1.toString(), Toast.LENGTH_SHORT).show();
-                                Toast.makeText(getContext(), al2.toString(), Toast.LENGTH_SHORT).show();
+                                //.makeText(getContext(), al1.toString(), //.LENGTH_SHORT).show();
+                                //.makeText(getContext(), al2.toString(), //.LENGTH_SHORT).show();
 
                                 //al = Arrays.asList(n);
 
@@ -125,7 +125,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                                 recyclerView.setLayoutManager(mLayoutManager);
 
                                 recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                adapter = new MyRecyclerViewAdapter(getContext(), al1,al2,al3,al4,al5,al6,al2,al1,al1,al1,"3");
+                                adapter = new MyRecyclerViewAdapter(getContext(), al1,al3,al5,al6,al4,al2,al2,al1,al1,al1,"3");
                                 adapter.setClickListener(ShowRouteDetailsFragment.this);
                                 recyclerView.setAdapter(adapter);
                                 recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -172,23 +172,23 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
 
         int id=view.getId();
         String user_id1 = adapter.getItem(position);
-        // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), "On Item Clicked"+id, Toast.LENGTH_SHORT).show();
+        // //.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, //.LENGTH_SHORT).show();
+        //.makeText(getContext(), "On Item Clicked"+id, //.LENGTH_SHORT).show();
 
         switch (id){
-            case R.id.t2:Fragment fragment = new AddRouteForShopsFragment();
+            case R.id.ib_edit:Fragment fragment = new AddRouteForShopsFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
                 data.putString("data", user_id1);//put string, int, etc in bundle with a key value
                 fragment.setArguments(data);
-                Toast.makeText(getContext(), "Userid"+user_id1, Toast.LENGTH_SHORT).show();
+                //.makeText(getContext(), "Userid"+user_id1, //.LENGTH_SHORT).show();
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
 
-            case R.id.imageButton: final String st_delid= adapter.getItem(position);
+            case R.id.ib_delete: final String st_delid= adapter.getItem(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setIcon(android.R.drawable.ic_lock_power_off);
                 builder.setTitle("Delete");
@@ -197,7 +197,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        Toast.makeText(getContext(), "st_delid\n"+st_delid, Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "st_delid\n"+st_delid, //.LENGTH_SHORT).show();
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, ConfigUrls.REMOVE_DETAILS,
                                 new Response.Listener<String>() {
                                     @Override
@@ -205,11 +205,11 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                                         //If we are getting success from server
                                         if(TextUtils.isEmpty(response)){
                                             //Creating a shared preference
-                                            Toast.makeText(getContext(), "Unable to delete product data"+response.toString(), Toast.LENGTH_LONG).show();
+                                            //.makeText(getContext(), "Unable to delete product data"+response.toString(), //.LENGTH_LONG).show();
 
                                         }else{
 
-                                            Toast.makeText(getContext(), "Customer Deleted Successfully"+response, Toast.LENGTH_SHORT).show();
+                                            //.makeText(getContext(), "Customer Deleted Successfully"+response, //.LENGTH_SHORT).show();
                                             Log.d("mytag", "onResponse:REMOVE_DETAILS "+response);
                                             Fragment fragment = new AddShopOnRoutesTab();
                                             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -256,7 +256,7 @@ public class ShowRouteDetailsFragment extends Fragment implements MyRecyclerView
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getContext(), "Delete Operation Cancelled", Toast.LENGTH_SHORT).show();
+                        //.makeText(getContext(), "Delete Operation Cancelled", //.LENGTH_SHORT).show();
                     }
                 });
 
