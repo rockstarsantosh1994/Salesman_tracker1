@@ -43,14 +43,14 @@ import java.util.TimerTask;
 
 import static android.content.Context.LOCATION_SERVICE;
 
-public class AdminDashboard extends Fragment implements OnMapReadyCallback {
+public class AdminDashboard extends Fragment implements OnMapReadyCallback ,View.OnClickListener {
 
-    public String admin_id,lattitude,longitude,sellname;
+    public String admin_id,lattitude="",longitude="",sellname;
     private LatLng latLng;
     private GoogleMap mMap;
     public LocationListener locationListener;
     public LocationManager locationManager;
-
+    public SupportMapFragment mapFragment;
 
     public AdminDashboard() {
         // Required empty public constructor
@@ -69,7 +69,6 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
 
 
         //We will get Lattitude ,longitude and name.....by below function.........
-
         Timer timer=new Timer();
         TimerTask hourlyTask=new TimerTask() {
             @Override
@@ -77,16 +76,20 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
                 try{
                     fetchLiveTrackPosition();
                 }catch (NullPointerException e){e.printStackTrace();}
-
-
             }
         };
-       //schedule the task to run starting now and then every minute.....
+        //schedule the task to run starting now and then every minute.....
         timer.schedule(hourlyTask,01,5000);
 
-       return  view;
+        mapFragment = (SupportMapFragment) this.getChildFragmentManager()
+                .findFragmentById(R.id.admin_map);
+
+
+       return view;
 
     }
+
+
 
 
     public void fetchLiveTrackPosition(){
@@ -114,6 +117,10 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
                                 Log.d("mytag", "onResponse:json Bhau"+json);
                                 Log.d("mytag", "onResponse:lattitude "+lattitude+"\n longitude "+longitude+
                                         "\n sell Name"+sellname);
+
+
+
+                                mapFragment.getMapAsync(AdminDashboard.this);
 
 
                             }catch (JSONException e){e.printStackTrace();}
@@ -147,7 +154,7 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Log.d("mytag1", "onMapReady: "+lattitude+"\nlongitue"+longitude+"\nname"+sellname);
+        Log.d("mytag1", "\nonMapReady: "+lattitude+"\nlongitue"+longitude+"\nname"+sellname);
             mMap=googleMap;
 
 
@@ -162,19 +169,40 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        Double longitude1=Double.parseDouble(longitude);
-        Double lattitude1=Double.parseDouble(lattitude);
-
-         latLng=new LatLng(longitude1,lattitude1);
+        try {
 
 
+
+          /*  Double longitude1 = Double.parseDouble(longitude);
+            Double lattitude1 = Double.parseDouble(lattitude);*/
+
+
+
+           /* Double longitude1 = 73.84953666666667;
+            Double lattitude1 =18.533088333333335;*/
+           if(!longitude.equals("") && !lattitude.equals("")) {
+               Double longitude1 = Double.parseDouble(longitude);
+               Double lattitude1 = Double.parseDouble(lattitude);
+
+               Log.d("mytag", "onMapReady:Double Longitude1 " + longitude1 + "\n lattitude1" + lattitude1);
+               latLng = new LatLng(lattitude1, longitude1);
+
+               mMap.addMarker(new MarkerOptions().position(latLng).title(sellname));
+               mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f));
+           }
+        }catch (NullPointerException e){e.printStackTrace();}
+        catch (NumberFormatException e){e.printStackTrace();}
         locationManager = (LocationManager) getContext().getSystemService(LOCATION_SERVICE);
 
         locationListener =new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                Toast.makeText(getContext(), "latlong"+latLng, Toast.LENGTH_SHORT).show();
-                mMap.addMarker(new MarkerOptions().position(latLng).title(sellname));
+
+                Double longitude1 = Double.parseDouble(longitude);
+                Double lattitude1 = Double.parseDouble(lattitude);
+                latLng = new LatLng(lattitude1,longitude1);
+                 Toast.makeText(getContext(), "latlong"+latLng, Toast.LENGTH_SHORT).show();
+                mMap.addMarker(new MarkerOptions().position(latLng).title("Aniket Shinde"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,16f));
 
             }
@@ -196,7 +224,7 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
         };
         try {
 
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60*1000, 0, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000*60, 0, locationListener);
 
 
         } catch (SecurityException e) {
@@ -205,4 +233,8 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback {
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }
