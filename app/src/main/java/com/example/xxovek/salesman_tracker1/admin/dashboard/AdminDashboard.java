@@ -79,7 +79,7 @@ public class AdminDashboard extends Fragment implements OnMapReadyCallback ,View
             }
         };
         //schedule the task to run starting now and then every minute.....
-        timer.schedule(hourlyTask,01,5000);
+        timer.schedule(hourlyTask,01,1000*60);
 
         mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.admin_map);
